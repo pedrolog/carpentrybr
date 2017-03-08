@@ -19,3 +19,8 @@ summary(modelo)
 ```
 
 O modelo ajustado apresenta coeficiente angular de `r round(coef(modelo)[2], 2)`. Portanto, para cada aumento unitário de velocidade, a resposta média tem um incremento de `r coef(modelo)[2]` unidades.
+
+```{r plot_dados}
+with(cars, plot(speed, dist))
+```
+
