@@ -1,0 +1,46 @@
+---
+title: "Curso de Introdução ao R"
+author: "MI602"
+date: "3/8/2017"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## (00:00)Introdução ao R e RStudio
+
+###How to find your way around RStudio? 
+###How to interact with R? 
+###How to manage your environment? 
+###How to install packages?
+
+## Project Management With RStudio
+
+##Seeking Help
+
+##Data Structures
+
+##Exploring Data Frames
+
+##Subsetting Data
+
+##Creating Publication-Quality Graphics
+
+##Vectorization
+
+##Functions Explained
+
+##Writing Data
+
+##Split-Apply-Combine
+	
+##Dataframe Manipulation with dplyr	
+##Dataframe Manipulation with tidyr
+
+##Producing Reports With knitr	
+
+##Writing Good Software
+
+##Finish
