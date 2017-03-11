@@ -19,11 +19,11 @@ knitr::opts_chunk$set(echo = TRUE)
 * **Questões:**
   Como posso fazer diferentes cálculos em diferentes conjuntos de dados?  
 * **Objetivos:**
-  Poder usar a estrategia de split-apply-combine para anàlise de dados.  
+  Poder usar a estratégia de split-apply-combine para análise de dados.  
 
 ***
 
-Anteriormente analisamos como usar funções para simplificar o seu código. Nós definimos a função `calcGDP`, que pega o conjunto de dados gapminder, e miltiplica a população com a coluna do PIB per capita. Também definimos argumentos adicionais para que possamos filtrar por `year` e `country`:
+Anteriormente analisamos como usar funções para simplificar o seu código. Nós definimos a função `calcGDP`, que pega o conjunto de dados gapminder, e multiplica a população com a coluna do PIB per capita. Também definimos argumentos adicionais para que possamos filtrar por `year` e `country`:
 
 ```{r echo = TRUE}
 # Takes a dataset and multiplies the population column
@@ -42,9 +42,9 @@ calcGDP <- function(dat, year=NULL, country=NULL) {
 }
 ```
 
-Uma tarefa comum que encontrará ao trabalhar com dados, é que você desejará executar cálculos em diferentes grupos dentro dos dados. Acima, estávamos calculando simplesmente o PIB miltiplicando duas colunas juntas. Mas e se quisermos calcular o PIB médio por continente? 
+Uma tarefa comum que encontrará ao trabalhar com dados, é que você desejará executar cálculos em diferentes grupos dentro dos dados. Acima, estávamos calculando simplesmente o PIB multiplicando duas colunas juntas. Mas e se quisermos calcular o PIB médio por continente? 
 
-Deveriamos executar `calcGPD` e então pegar as médias por cada continente:
+Deveríamos executar `calcGPD` e então pegar as médias por cada continente:
 
 ```{r echo = FALSE}
 gapminder<-read.csv(file="C:/Users/kloor/Documents/git/Pruebas/data/gapminder-FiveYearData.csv")
@@ -63,9 +63,9 @@ mean(withGDP[withGDP$continent == "Americas", "gdp"])
 mean(withGDP[withGDP$continent == "Asia", "gdp"])
 ```
 
-Mas isso não é *agradável*. Sim, ussando uma função, você pode reducir uma quantidade substancial de repetições. Isso **é** bom. Porém ainda há repetição. Repetindo custará-lhe tempo, agora e mais tarde, e potencialmente introduzirá alguns erros desagradáveis.
+Mas isso não é *agradável*. Sim, usando uma função, você pode reduzir uma quantidade substancial de repetições. Isso **é** bom. Porém ainda há repetição. Repetindo custará-lhe tempo, agora e mais tarde, e potencialmente introduzirá alguns erros desagradáveis.
 
-Poderíamos escrever uma nova função que seja flexível como `calcGDP`, mas isso também requere uma quantidade substancial de esforço e testes até estar pronta.
+Poderíamos escrever uma nova função que seja flexível como `calcGDP`, mas isso também requer uma quantidade substancial de esforço e testes até estar pronta.
 
 O problema que estamos revelando aqui é conhecido como "split-apply-combine":
 
@@ -74,7 +74,7 @@ O problema que estamos revelando aqui é conhecido como "split-apply-combine":
 Nós queremos *dividir* nossos dados em grupos, neste caso continentes, *aplicar* alguns cálculos nesse grupo, e depois opcionalmente *combinar* os resultados. 
 
 ##O pacote plyr
-Para alguns de vocês que tem ussado R antes, podería estar familiarizado com o uso de familia de funções. Agora, vamos apresentar outro método para resolver o problema “split-apply-combine”. O pacote `plyr` fornece um conjunto de funções que encontraremos mais agradáveis para resolver este problema.
+Para alguns de vocês que tem usado R antes, poderia estar familiarizado com o uso de família de funções. Agora, vamos apresentar outro método para resolver o problema “split-apply-combine”. O pacote `plyr` fornece um conjunto de funções que encontraremos mais agradáveis para resolver este problema.
 
 Instalamos este pacote em uma tarefa anterior. Vamos carregá-lo agora:
 
@@ -87,11 +87,11 @@ Plyr tem funções para operações entre `lists`, `data.frames` e `arrays` (mat
 2. Aplique uma função em cada divisão.
 3. Recombine os dados da saída como um único objeto de dados.
 
-As funções são chamadas baseado na estrutura dos dados eles esperam como entrada, e a estrutura dos dados que se deseja como saída: [a]rray, [l]ist, ou [d]ata.frame. A primeira letra corresponde à  estrutura dos dados da entrada, a segunda letra à estrutura dos dados da saída, e o resto da função é chamada "ply".
+As funções são chamadas baseadas na estrutura dos dados elas esperam como entrada, e a estrutura dos dados que se deseja como saída: [a]rray, [l]ist, ou [d]ata.frame. A primeira letra corresponde à  estrutura dos dados da entrada, a segunda letra à estrutura dos dados da saída, e o resto da função é chamada "ply".
 
 Isso nós dá 9 funções principais **ply. Existem três funções adicionais que só executarão as etapas de divisão e aplicação e não qualquer etapa de combinação. Eles são chamados por seu tipo de dados de entrada e representam uma saída nula por um _ (veja a tabela).
 
-Note aqui que o uso dos arreglos de plyr é diferente que em R, um arreglo em ply pode incluir um vetor ou uma matriz.
+Note aqui que o uso dos "arrays" de plyr é diferente que em R, um "array" em ply pode incluir um vetor ou uma matriz.
 ![](http://nicercode.github.io/2014-02-13-UNSW/lessons/40-repeating/full_apply_suite.png)
 
 Cada uma das funções de xxply (daply, ddply, llply, laply, ...) tem a mesma estrutura e tem 4 características e estruturas chaves:
@@ -134,7 +134,7 @@ dlply(
 
 Nós chamamos a mesma função novamente, mas mudamos a segunda letra para uma l, assim a saída obtida foi uma lista.
 
-Pomos também especificar varias colunas para agrupar:
+Podemos também especificar várias colunas para agrupar:
 
 ```{r echo = TRUE, include=TRUE}
 ddply(
@@ -151,7 +151,7 @@ daply(
  .fun = function(x) mean(x$gdp)
 )
 ```
-Você pode usar essas funções em lugar de "for loops" (é usualmente mais rapido). Para remplazar um "for loop", ponha o código que está no corpo do "for loop" em lugar da função anônima.
+Você pode usar essas funções em lugar de "for loops" (é usualmente mais rápido). Para substituir um "for loop", ponha o código que está no corpo do "for loop" em lugar da função anônima.
 
 ```{r echo = TRUE, include=TRUE}
 d_ply(
@@ -185,12 +185,12 @@ Calcule a média da esperança de vida por continente e ano. Qual tinha a maior 
 
 ###Desafio Avançado
 ```
-Calcule a diferença das médias da esperança de vida entre os anos 1952 e 2007 ussando os resultados do desafio 2 (use uma das funções de plyr).
+Calcule a diferença das médias da esperança de vida entre os anos 1952 e 2007 usando os resultados do desafio 2 (use uma das funções de plyr).
 ```
 
 ###Desafio Alternativo se a aula parece perdida
 ```
-Sem executar-lo, qual dos segintes códigos calculará a média da esperança de vida por continente:
+Sem executá-lo, qual dos segintes códigos calculará a média da esperança de vida por continente:
 ```
 
 1.
