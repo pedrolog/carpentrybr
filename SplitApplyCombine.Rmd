@@ -10,6 +10,7 @@ output:
 ```{r include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
+# Split-Apply-Combine
 
 ***
 ###Visão Geral
@@ -69,8 +70,6 @@ Poderíamos escrever uma nova função que seja flexível como `calcGDP`, mas is
 O problema que estamos revelando aqui é conhecido como "split-apply-combine":
 
 ![](http://i.imgur.com/yjNkiwL.png)
-
-***
 
 Nós queremos *dividir* nossos dados em grupos, neste caso continentes, *aplicar* alguns cálculos nesse grupo, e depois opcionalmente *combinar* os resultados. 
 
@@ -169,27 +168,27 @@ d_ply(
 ```
 
 ***
-####Dica: imprimir números                                                   
+###Dica: apresentação de números                                                   
 A função `format` pode ser usada para melhorar a apresentação dos valores numéricos em mensagens
 
 ***
 
-####Desafio 1
+###Desafio 1
 ```
 Calcule a média da esperança de vida por continente. Qual tem a maior? Qual tem a menor?
 ```
 
-####Desafio 2
+###Desafio 2
 ```
 Calcule a média da esperança de vida por continente e ano. Qual tinha a maior e a menor em 2017? Qual apresenta a maior mudança entre os anos 1952 e 2007?
 ```
 
-####Desafio Avançado
+###Desafio Avançado
 ```
 Calcule a diferença das médias da esperança de vida entre os anos 1952 e 2007 ussando os resultados do desafio 2 (use uma das funções de plyr).
 ```
 
-####Desafio Alternativo se a aula parece perdida
+###Desafio Alternativo se a aula parece perdida
 ```
 Sem executar-lo, qual dos segintes códigos calculará a média da esperança de vida por continente:
 ```
