@@ -24,7 +24,7 @@ knitr::opts_chunk$set(echo = TRUE)
 * Como instalar pacotes?  
 
 
-<p style="border: ridge#0000FF 1px;">**Objetivos**</p> 
+**Objetivos** 
 
 * Obter familiaridade com os vários panéis no IDE do RStudio.  
 * Obter familiaridade com os botões, atalhos e opções no IDE do RStudio.  
@@ -43,11 +43,11 @@ A ciência é um processo de várias etapas: uma vez que você criou uma experi�
 
 Certifique-se de que tem a versão mais recente do R e do RStudio instalados na sua máquina. Isso é importante, pois alguns pacotes usados no workshop podem não ser instalados corretamente (ou em todos) se R não estiver atualizado.
 
-[Baixe e instale a versão mas recente de R aqui](https://www.r-project.org/)  [Baixe e instale o RStudio aqui](https://www.rstudio.com/)  
+[Baixe e instale a versão mas recente de R aqui](https://www.r-project.org/)   [Baixe e instale o RStudio aqui](https://www.rstudio.com/)  
 
 ## Introduçaõ ao RStudio  
 
-Bem-vindo à parte R da oficina de Carpintaria de Software.  
+Bem-vindo à parte do R do Software Carpentry.  
 
 Ao longo desta lição, vamos ensinar-lhe alguns dos fundamentos da linguagem R, bem como algumas práticas recomendadas para organizar o código para projetos científicos que facilitarão a sua vida. 
 
@@ -81,7 +81,7 @@ Existem duas maneiras principais de se trabalhar dentro do RStudio.
    * Você poderá executar o arquivo criado a partir de RStudio ou usando a função **source ()** de R.  
 
 
-<p style="border: ridge#0000FF 1px;"> **Dica: Executando segmentos do seu código**</p>  
+**Dica: Executando segmentos do seu código**  
 
 O RStudio oferece-lhe uma grande flexibilidade na execução de código a partir da janela do editor. Existem botões, opções de menu e atalhos de teclado. Para executar a linha atual, você pode: 1. clicar no botão Executar acima do painel do editor ou 2. selecionar "Run lines" no menu "Code", ou 3. pressionar Ctrl-Enter no Windows ou Linux ou Command-Enter no OS X. (Este atalho também pode ser visto ao passar o mouse sobre o botão). Para executar um bloco de código, selecione-o e, em seguida, Executar. Se você modificou uma linha de código dentro de um bloco de código que você acabou de executar, não há necessidade de reajustar a seção e Run, você pode usar o próximo botão, Re-Run the previous code region. Isso executará o bloco de código anterior incluindo as modificações feitas.
 
@@ -106,8 +106,7 @@ Como bash, se você digitar um comando incompleto, R esperará que você o compl
 1+
 ```  
 
-
-<p style="border: ridge#0000FF 1px;">  **Dica: Cancelamento de comandos**</p> 
+**Dica: Cancelamento de comandos**
 
 Se você estiver usando R a partir da linha de comando em vez de dentro RStudio, você precisará usar Ctrl + C em vez de Esc para cancelar o comando. Isso também se aplica aos usuários de Mac!  
 
