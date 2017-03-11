@@ -68,7 +68,9 @@ Poderíamos escrever uma nova função que seja flexível como `calcGDP`, mas is
 
 O problema que estamos revelando aqui é conhecido como "split-apply-combine":
 
-![](C:\Users\kloor\Documents\git\Pruebas\Imagenes\tabla1.png)
+![](http://i.imgur.com/yjNkiwL.png)
+
+***
 
 Nós queremos *dividir* nossos dados em grupos, neste caso continentes, *aplicar* alguns cálculos nesse grupo, e depois opcionalmente *combinar* os resultados. 
 
@@ -91,7 +93,7 @@ As funções são chamadas baseado na estrutura dos dados eles esperam como entr
 Isso nós dá 9 funções principais **ply. Existem três funções adicionais que só executarão as etapas de divisão e aplicação e não qualquer etapa de combinação. Eles são chamados por seu tipo de dados de entrada e representam uma saída nula por um _ (veja a tabela).
 
 Note aqui que o uso dos arreglos de plyr é diferente que em R, um arreglo em ply pode incluir um vetor ou uma matriz.
-![](C:\Users\kloor\Documents\git\Pruebas\Imagenes\tabla2.png)
+![](http://nicercode.github.io/2014-02-13-UNSW/lessons/40-repeating/full_apply_suite.png)
 
 Cada uma das funções de xxply (daply, ddply, llply, laply, ...) tem a mesma estrutura e tem 4 características e estruturas chaves:
 
