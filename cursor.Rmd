@@ -62,11 +62,11 @@ Quando você abrir RStudio pela primeira vez, você será recebido por três pai
 * Ambiente/História (tabulada no canto direito)  
 * Archivos/Gráficos/Pacotes/Ajuda/Visualizador (com abas na parte inferior direita)
 
-![](01-rstudio.png) 
+![](http://swcarpentry.github.io/r-novice-gapminder/fig/01-rstudio.png) 
 
 Depois de abrir arquivos, como R scripts, um painel de editor também será aberto no canto superior esquerdo.  
 
-![](02-rstudio.png) 
+![](http://swcarpentry.github.io/r-novice-gapminder/fig/01-rstudio-script.png) 
 
 ## Fluxo de trabalho no RStudio  
 
