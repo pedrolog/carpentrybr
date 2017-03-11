@@ -1,5 +1,5 @@
 ---
-title: "Curso de Introdu��o ao R"
+title: "Curso de Introdu??o ao R"
 author: "MI602"
 date: "3/8/2017"
 output: html_document
@@ -9,7 +9,7 @@ output: html_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-## (00:00)Introdu��o ao R e RStudio
+## (00:00)Introdu??o ao R e RStudio
 
 ###How to find your way around RStudio? 
 ###How to interact with R? 
@@ -18,7 +18,125 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ## Project Management With RStudio
 
-##Seeking Help
+
+----------------------------
+----------------------------
+----------------------------
+
+## Procurando ajuda
+**Questões**
+
+* Como posso conseguir ajuda no R?
+
+**Objetivos**
+
+* Ser capaz de ler arquivos de ajuda do R para funções e caracteres especiais.
+* Ser capaz de usar a lista de tópicos do CRAN para identificar pacotes que possam resolver um problema.
+* Ser capaz de procurar ajuda de colegas.
+
+### Lendo arquivos de ajuda
+R, e todo pacote, fornece arquivos de ajuda para funções. Para procurar ajuda sobre uma função de uma função específica que está em um pacote carregado no seu namespace (sua seção interativa do R):
+
+```
+?function_name
+help(function_name)
+```
+Isso irá carregar uma página de ajuda no RStudio (ou um texto no próprio R).
+
+Cada página de ajuda é dividida nas seções:
+
+* Description: Uma descrição estendida sobre o que a função faz.
+* Usage: Os argumentos da função e seus valores padrões.
+* Arguments: Uma explicação dos dados que cada argumento espera receber.
+* Details: Qualquer detalhe importante para estar atento.
+* Values: Os dados que a função retorna.
+* See Also: Qualquer função relacionada você pode achar útil.
+* Examples: Alguns exemplos sobre como usar a função.
+* Diferentes funções podem ter diferentes seções, mas essas são as principais para se prestar atenção.
+
+##### Dica: Lendo arquivos de ajuda
+
+Um dos aspectos mais assustadores do R é seu imenso número de funções disponíveis. Seria improvável, se não impossível, lembrar corretamente como utilizar cada função você utiliza. Felizmente, os arquivos de ajuda existem para que você não precise fazer isso!
+
+### Operadores Especiais
+Para procurar ajuda sobre operadores especiais, use os termos:
+
+```
+?"+"
+```
+
+### Conseguindo ajuda sobre pacotes
+
+Muitos pacotes vem com “vignettes”: tutoriais e exemplos de documentações estendidos. Sem qualquer argumento, _vignette()_ listará todas vignettes para todos pacotes instalados; _vignette(package="nome-pacote")_ listará todas as vignettes disponíveis para nome-pacote, e _vignette("nome-vignette")_ abrirá a vignette especificada.
+
+Se um pacote não possui vignettes alguma, você geralmente pode achar ajuda digitando help("nome-pacote").
+
+### Quando você meio que lembra a função
+Se você não tem certeza em qual pacote uma certa função está, ou como ela é especificamente escrita você pode fazer uma busca fuzzy:
+
+```
+??function_name
+```
+
+### Quando você não tem ideia por onde começar
+Se você não sabe qual pacote ou função você precisa, a lista de tópicos do CRAN ([CRAN Task Views](https://cran.r-project.org/web/views/)) é uma lista especialmente mantida de pacotes agrupados em áreas. Esse pode ser um bom ponto de partida.
+
+### Quando o seu código não funciona: procurando ajuda com outras pessoas
+Se você está tendo trabalho usando alguma função, em  90% das vezes, a resposta que você procura já foi respondida em [Stack Overflow](http://stackoverflow.com/). Você pode procurar usando o campo [r].
+
+Se você não consegue encontrar a resposta, existem algumas funções úteis para ajudá-lo a tirar sua dúvida com outras pessoas:
+
+```
+?dput
+```
+
+Irá retornar o banco de dados com o qual você está trabalhando em um formato que ele possa ser copiado e colado por qualquer um em suas sessões em R.
+
+```{r }
+sessionInfo()
+```
+
+Irá imprimir a sua atual versão do R, bem como os pacotes que você tem carregados. Isso pode ser útil para ajudar outras pessoas a reproduzirem e corrigirem seus problemas.
+
+#### Desafio 1
+
+Olhe a ajuda da função _c_. Que tipo de vetor você espera criar se você usar os seguintes comandos:
+```
+c(1, 2, 3)
+c('d', 'e', 'f')
+c(1, 2, 'f')
+```
+#### Solução do desafio 1
+A função _c()_ cria um vetor, no qual todos elementos são do mesmo tipo. No primeiro caso, os elementos são numéricos, no segundo, eles são caracteres, e no terceiro eles são caracteres: os valores numéricos foram "forçados" a serem caracteres.
+
+#### Desafio 2
+
+Olhe a ajuda para a função _paste_. Você precisará dela mais adiante. Qual a diferença entre os argumentos _sep_ e _collapse_?
+
+#### Solução do desafio 2
+```
+help("paste")
+?paste
+```
+#### Desafio 3
+
+Use a função help para achar a função (e seus parâmetros associados) que pode ser usada para carregar dados de um arquivo csv no qual as colunas são delimitadas com "\\t" (tab) e decimais são pontos “.”. Essa verificação para separadores decimais é importante, especialmente se você está trabalhando com colaboradores internacionais, porque países diferentes possuem diferentes convenções para o ponto decimal (isto é, vírgula ou ponto). Dica: use ??csv para buscar funções relacionadas com csv.
+
+Outras opções de ajuda
+
+* [Quick R](http://www.statmethods.net/)
+
+* [RStudio cheat sheets](https://www.rstudio.com/resources/cheatsheets/)
+
+* [Cookbook for R](http://www.cookbook-r.com/)
+
+#### Pontos chave
+
+* Use _help()_ para buscar ajuda online sobre R.
+
+----------------------------
+----------------------------
+----------------------------
 
 ##Data Structures
 
