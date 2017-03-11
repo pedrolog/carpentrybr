@@ -15,7 +15,7 @@ knitr::opts_chunk$set(echo = TRUE)
 **Ensino:** 45 min  
 **Exercicios:** 10 min  
 
-<p style="border: ridge#0000FF 1px;">**Questões**</p>    
+<p style="border: ridge#0000FF 1px;">  **Questões**</p>    
 
 
 * Como encontrar o seu camihno ao redor de RStudio?  
