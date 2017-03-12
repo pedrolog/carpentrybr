@@ -170,3 +170,15 @@ Embora não exista a "MELHOR" forma de organizar um projeto, existem alguns princ
 Este é provavelmente o principal objetivo ao organizar um projeto. Dados geralmente são difíceis de se coletar. Trabalhar com dados em programas interativos (Excel) onde eles podem ser modificados atrapalha, pois não temos certeza de onde os dados vieram ou como foram modificados desde a coleta. Para evitar este tipo de problema é melhor trabalhar os dados como arquivos apenas para leitura.
 
 ### Limpeza dos dados
+
+Em muitos casos os dados são "sujos". Nestes casos é extremamente difícil transformar os dados até que  eles sejam passíveis de serem lidos pelo R (ou qualquer outro programa). Esta tarefa é geralmente chamada de "data munging". Quando alterações devem ser feitas no conjunto de dados original, é aconselhável criar um segundo arquivo de leitura em uma pasta separada.
+
+### Trate as saídas como dispensáveis
+
+Qualquer coisa gerada pelos scripts devem ser tratados como dispensáveis. Devemos ser capazes de recriar as alterações feitas a partir do script.
+
+Existem diversas maneiras de gerenciar os outputs. É interessante termos uma pasta com subdiretórios para cada análise que formos fazer. Desta maneira é mais fácil encontrar as análises de interesse, pois ao mesmo tempo que nem todas as análises feitas são utilizadas no trabalho final, outras poderão ser aplicadas em outros.
+
+> Dica: Praicas suficientes para computação científica
+
+
