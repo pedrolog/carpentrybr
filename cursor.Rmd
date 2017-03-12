@@ -446,7 +446,7 @@ O problema que estamos revelando aqui é conhecido como "split-apply-combine":
 Nós queremos *dividir* nossos dados em grupos, neste caso continentes, *aplicar* alguns cálculos nesse grupo, e depois opcionalmente *combinar* os resultados. 
 
 ##O pacote plyr
-Para alguns de vocês que tem usado R antes, poderia estar familiarizado com o uso de família de funções. Agora, vamos apresentar outro método para resolver o problema “split-apply-combine”. O pacote `plyr` fornece um conjunto de funções que encontraremos mais agradáveis para resolver este problema.
+Para alguns de vocês que tem usado R antes, poderia estar familiarizado com o uso de família de funções. Agora, vamos apresentar outro método para resolver o problema “split-apply-combine”. O pacote [plyr](http://had.co.nz/plyr/) fornece um conjunto de funções que encontraremos mais agradáveis para resolver este problema.
 
 Instalamos este pacote em uma tarefa anterior. Vamos carregá-lo agora:
 
