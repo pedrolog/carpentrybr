@@ -123,3 +123,41 @@ Instale os pacotes *ggplot2*, *plyr* e *gapminder*.
 * Use *ls()* para listar as variáveis de um programa.
 * Use *rm()* para deletar objetos de um programa.
 * Use *install.packages()* para instalar pacotes.
+
+# Gerenciamento de projetos com RStudio
+
+A processo científico é de natureza incremental. Muitos projetos começam com notas ou códigos aleatórios e a partir disso surgem manuscritos. Eventualmente escritas e códigos se misturam
+
+A maioria das pessas organizam seus projetos da seguinte maneira
+
+COLOCAR IMAGEM
+
+Por diversas razões SEMPRE devemos esse tipo de armazenamento de projetos:
+
+1. É difícil ver qual versão é a original e quais são as modificadas.
+2. Deste modo obtemos diversas extensões de arquivos na mesma pasta.
+3. Provavelmente iremos demorar bastante para para encontrar alguma coisa. Relacionar uma figura com o código que a gera, por exemplo.
+
+Um bom *layout* pode facilitar bastante nossa vida. Algumas vantagens são:
+* Nos ajuda a assegurar a integridade dos dados;
+* Facilita o compartilhamento dos códigos com outras pessoas (colega de laboratório, colaborador ou supervisor);
+* Facilita o processo de atualização dos códigos;
+* É mais fácil encontrar um projeto após algum tempo.
+
+## Uma possível solução
+
+Existem ferramentas e pacotes que nos ajudam a gerenciar nosso trabalho de forma efetiva.
+
+Uma das melhores características do RStudio, são as funcionalidades oferecidas em termos de gerenciamento de projetos. Usaremos tais ferramentas para uma criar um projeto independente e passível de ser reproduzido.
+
+> Desafio: Criando um projeto independente
+
+ 1. Clique no botão *File* e então * New Progect*.
+ 2. Clique em *New Directory*
+ 3. Clique em *Empty Project*
+ 4. Digite o nome do diretório que em que seu projeto será gravado.
+ 5. Garante que a caixa *Create a git  repository* está selecionada.
+ 6. Clique em *Create Projeto*.
+ 
+Agora, toda vez que iniciarmos uma sessão desse projeto no R ou RStudio, todo o trabalho estará inteiramente contido neste diretório. 
+
