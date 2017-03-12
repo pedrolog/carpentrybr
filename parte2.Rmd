@@ -161,3 +161,12 @@ Uma das melhores características do RStudio, são as funcionalidades oferecidas e
  
 Agora, toda vez que iniciarmos uma sessão desse projeto no R ou RStudio, todo o trabalho estará inteiramente contido neste diretório. 
 
+## Melhores práticas aplicadas a organização de projetos
+
+Embora não exista a "MELHOR" forma de organizar um projeto, existem alguns princípios gerais que são consistentes com o objetico de deixar o gerenciamento de projetos mais simples.
+
+### Trate os dados apenas como leitura
+
+Este é provavelmente o principal objetivo ao organizar um projeto. Dados geralmente são difíceis de se coletar. Trabalhar com dados em programas interativos (Excel) onde eles podem ser modificados atrapalha, pois não temos certeza de onde os dados vieram ou como foram modificados desde a coleta. Para evitar este tipo de problema é melhor trabalhar os dados como arquivos apenas para leitura.
+
+### Limpeza dos dados
