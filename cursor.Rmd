@@ -189,7 +189,7 @@ Podemos também fazer comparação em R:
 1>=-9  # Maior ou igual que
 ```
 
-<p style="border: ridge#0000FF 1px;"> **Dica: Comparando Números**</p>
+**Dica: Comparando Números**
 
 Uma palavra de advertência sobre a comparação de números: você nunca deve usar == para comparar dois números a menos que sejam inteiros (um tipo de dados que pode representar especificamente apenas números inteiros).
 
