@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="pandoc" />
+
+
+<meta name="author" content="FabianaOlivieri" />
+
+
+<title>Functions Explained</title>
+
+<p>Aqui, verificamos se cada argumento adicional é definido como nulo, e sempre que eles não são nulos irão sobrepor o conjunto de dados
+<p> armazenado pelo argumento não nulo.
+<p>Fazemos isso para que nossa função seja mais flexível para mais tarde. Podemos pedir para calcular o PIB para:
+<ul>
+<li>Conjunto de dados inteiro;
+<li>Um único ano;
+<li>Um único país;
+<li>Uma única combinação de ano e país.
+<ul>
+<p>Ao usar% em%, também podemos dar vários anos ou países a esses argumentos.
+</div>
+<div id="dica" class="section level1">
+<h1>dica</h1>
+<p> PASSANDO O VALOR
+<ul>
+<p>As funções no R, criam ópias para que possam operar dentro do corpo de uma função.
+<p>Quando modificamos o dado dentro da função estamos modificando a cópia do conjunto de dados armazenado, não a variável original que 
+<p>demos como o primeiro argumento.
+<p>Isso é chamado de "pass-by-value" e torna o código de escrita muito mais seguro: você sempre pode ter certeza de que, independentemente
+<p>das mudanças que fizer no corpo da função, fique dentro do corpo da função.
