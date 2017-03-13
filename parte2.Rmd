@@ -4,10 +4,9 @@ author: "Mário"
 date: "11 de março de 2017"
 output: html_document
 ---
-s
 ## Vetorização
 
-É de extrema relevância compreender que o R é vetorizado. Isso quer dizer que variáveis e funções podem receber vetores. 
+É de extrema relevância compreender que o R é vetorizado. Isso simplesmnte quer dizer que variáveis e funções podem receber vetores. 
 
 Veja os exemplos abaixo:
 
@@ -68,8 +67,9 @@ Se utilizarmos <- teremos efeitos indesejados ou  mensagens de erro.
 ```{r eval=FALSE}
 rm(list <- ls())
 ```
-> Erro: símbolo inesperado em : "rm(list <- ls() rm"
-
+~~~~
+Erro: símbolo inesperado em : "rm(list <- ls() rm"
+~~~~
 ~~~~
 Dica: Avisos vs Erros
 
@@ -117,30 +117,30 @@ Quais serão os valores das variáveis definidas abaixo ?
 ~~~~
 Desafio 3
 
-Rode os códigos do desafio anterior, escreva um comando e compare *massa* com *idade*. A massa é maior que a idade ? 
+Rode os códigos do desafio anterior, escreva um comando e compare massa com idade. A massa é maior que a idade ? 
 ~~~~
 
 ~~~~
 Desafio 4
 
-Limpe o seu ambiente de trabalho. Delete as variáveis *massa* e *idade*.
+Limpe o seu ambiente de trabalho. Delete as variáveis massa e idade.
 ~~~~
 
 ~~~~
 Desafio 5
 
-Instale os pacotes *ggplot2*, *plyr* e *gapminder*.
+Instale os pacotes ggplot2, plyr e gapminder.
 ~~~~
 
 ~~~~
 Pontos chave
 
 * Use o RStudio para escrever e rodar programas em R.
-* o R possui os operadores aritméticos e funções matemáticas usuais.
-* Use *<-* para designar valores para variáveis.
-* Use *ls()* para listar as variáveis de um programa.
-* Use *rm()* para deletar objetos de um programa.
-* Use *install.packages()* para instalar pacotes.
+* O R possui os operadores aritméticos e funções matemáticas usuais.
+* Use <- para designar valores para variáveis.
+* Use ls() para listar as variáveis de um programa.
+* Use rm() para deletar objetos de um programa.
+* Use install.packages() para instalar pacotes.
 ~~~~
 
 # Gerenciamento de projetos com RStudio
@@ -174,12 +174,12 @@ Uma das melhores características do RStudio, são as funcionalidades oferecidas e
 ~~~~
 Desafio: Criando um projeto independente
 
- 1. Clique no botão *File* e então * New Progect*.
- 2. Clique em *New Directory*
- 3. Clique em *Empty Project*
+ 1. Clique no botão File e então em  New Progect.
+ 2. Clique em New Directory
+ 3. Clique em Empty Project
  4. Digite o nome do diretório que em que seu projeto será gravado.
- 5. Garante que a caixa *Create a git  repository* está selecionada.
- 6. Clique em *Create Projeto*.
+ 5. Clique em Create a git  repository.
+ 6. Clique em Create Projeto.
  ~~~~
  
 Agora, toda vez que iniciarmos uma sessão desse projeto no R ou RStudio, todo o trabalho estará inteiramente contido neste diretório. 
@@ -208,22 +208,21 @@ Dica: Praticas interessantes em computação científica
 [Boas práticas em computação científica](https://github.com/swcarpentry/good-enough-practices-in-scientific-computing/blob/gh-pages/good-enough-practices-for-scientific-computing.pdf) sugerem as recomendações para uma boa organização de projetos:
 
 1. Coloque cada projeto em seu próprio diretório. O diretório deve ser nomeado após o projeto.
-2. Coloque documentos de textos associados a um diretório *doc*.
-3. Coloque os dados puros no diretório *data*, os dados alterados e os dados limpos devem ser colocados em uma pasta *results*.
-4. Coloque os scripts e os programas em um diretório *src*. Os programas importados de outros locais devem ser alocados no diretório *bin*.
+2. Coloque documentos de textos associados a um diretório doc.
+3. Coloque os dados puros no diretório data, os dados alterados e os dados limpos devem ser colocados em uma pasta results.
+4. Coloque os scripts e os programas em um diretório src. Os programas importados de outros locais devem ser alocados no diretório bin.
 5. Escolha nomes que indiquem a função de cada arquivo.
 ~~~~
 
 ~~~~
 Dica: Modelo de projeto - uma possível
 
-Uma maneira de aumatizar o gerenciamento de projetos  se dá com a instalação do pacote *ProjectTemplate*. Esse pacote ofere uma estrutura considerada ideal para o bom gerenciamento do projeto. O pacote é útil porque mostra o fluxo de trabalho de forma organizada e estruturada. Com o RStudio e com o Git é possível ter controle total dos trabalhos, além de facilitar o compartilhamento dos arquivos com colaboradores.
+Uma maneira de aumatizar o gerenciamento de projetos  se dá com a instalação do pacote ProjectTemplate. Esse pacote ofere uma estrutura considerada ideal para o bom gerenciamento do projeto. O pacote é útil porque mostra o fluxo de trabalho de forma organizada e estruturada. Com o RStudio e com o Git é possível ter controle total dos trabalhos, além de facilitar o compartilhamento dos arquivos com colaboradores.
 
-1. Instale o pacote *ProjectTemplate*
+1. Instale o pacote ProjectTemplate
 2. Carregue o pacote
 3. Inicie o projeto:
-~~~~
-~~~~
+
 install.packages("ProjectTemplate")
 
 library(ProjectTemplate)
@@ -240,9 +239,9 @@ O modo mais efetivo de trabalhar no R é brincando com os códigos na sessão inter
 ~~~~
 Dica: evite duplicação
 
-É possível que o mesmo conjunto de dados e o mesmo script sejam usados em projetos distintos. De modo geral, queremos evitar a duplicação de arquivos de modo a salvar espaço e não termos que atualizar o mesmo código em diferentes lugares.
+É possível que o mesmo conjunto de dados e o mesmo script sejam usados em projetos distintos. De modo geral queremos evitar a duplicação de arquivos de modo a salvar espaço e não termos que atualizar o mesmo código em diferentes lugares.
 
-Quando este for o caso é interessante usar *symbolic links*, que são atalhos para arquivos que se encontram em outro lugare. No Linux e no OS X podemos usar o comando *ln -s*, no Windows podemos criar um atalho ou usar o comando *mklink* do terminal do windows.
+Quando este for o caso é interessante usar symbolic links, que são atalhos para arquivos que se encontram em outro lugare. No Linux e no OS X podemos usar o comando ln -s, no Windows podemos criar um atalho ou usar o comando mklink do terminal do windows.
 ~~~~
 
 
