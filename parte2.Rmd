@@ -130,7 +130,7 @@ A processo científico é de natureza incremental. Muitos projetos começam com not
 
 A maioria das pessas organizam seus projetos da seguinte maneira
 
-COLOCAR IMAGEM
+![](http://swcarpentry.github.io/r-novice-gapminder/fig/bad_layout.png)
 
 Por diversas razões SEMPRE devemos esse tipo de armazenamento de projetos:
 
@@ -197,11 +197,12 @@ Uma maneira de aumatizar o gerenciamento de projetos  se dá com a instalação do 
 2. Carregue o pacote
 3. Inicie o projeto:
 
-```{r}
-install.packages("ProjectTemplate")
-library(ProjectTemplate)
-create.project("../my_project", merge.strategy = "allow.non.conflict")
-```
+> install.packages("ProjectTemplate")
+
+>  library(ProjectTemplate)
+
+>  create.project("../my_project", merge.strategy = "allow.non.conflict")
+
 Para mais informações sobre o pacote *ProjectTemplate* e suas funcionalidades acesse [ProjectTemplate](http://projecttemplate.net/index.html).
 
 ### Separe as funções das aplicações
