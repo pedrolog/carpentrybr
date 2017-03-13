@@ -27,7 +27,7 @@
 </div>
 <div id="dica" class="section level1">
 <h1>dica</h1>
-<p> **PASSANDO O VALOR**
+<p>PASSANDO O VALOR
 <ul>
 <p>As funções no R, criam ópias para que possam operar dentro do corpo de uma função.
 <p>Quando modificamos o dado dentro da função estamos modificando a cópia do conjunto de dados armazenado, não a variável original que 
@@ -90,7 +90,7 @@ fence(text=best_practice, wrapper="***")
 <p>escrevendo funções em R, você pode aprender mais lendo o R Manual de Linguagem ou o capítulo de programação em R Avançada, 
 <p>por Hadley Wickham. Para contexto, R usa a terminologia "ambientes" em vez de quadros.
 <ul>
-<h1>dica **Testando e Documentando**</h1>
+<h1>dica Testando e Documentando</h1>
 <p>É importante testar as funções e documentá-las: a documentação ajuda você e outros a entender qual é a finalidade de sua função
 <p>e como usá-la, e é importante certificar-se de que sua função realmente faça o que você acha que ela faz.
 <ul>
