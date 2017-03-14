@@ -7,23 +7,6 @@ output: html_document
       smooth_scroll: false
 ---
 
-```{r, include=FALSE}
-library(knitr)
-
-opts_chunk$set(cache=TRUE
-               , cache.path="cache/"
-               , fig.path="imagens/"
-               , dpi=100
-               , fig.align="center"
-               , comment=NA
-               , error=FALSE
-               , message=FALSE)
-
-options(width=120)
-
-library(gapminder)
-```
-
 ## Vetorização
 
 É de extrema relevância compreender que o R é vetorizado. Isso simplesmnte quer dizer que variáveis e funções podem receber vetores. 
@@ -33,12 +16,14 @@ Veja os exemplos abaixo:
 ```{r}
 1:5
 ```
+
 ```{r}
-2^(1:5)
+2 ^ (1:5)
 ```
+
 ```{r}
 x <- 1:5
-2^x
+2 ^ x
 ```
 
 A possibilidade de variáveis e funções receber valores faz do R um software extremamente poderoso. Este tópico essa abordado com mais detalhes adiante.
@@ -86,7 +71,7 @@ No caso acima foi especificado que o resultado da função `ls` deveria ser usado 
 
 Se utilizarmos `<-` teremos efeitos indesejados ou  mensagens de erro.
 
-```{{r, error=TRUE, echo=FALSE}}
+```{{r, error=TRUE, echo=TRUE}}
 rm(list <- ls())
 ```
 
@@ -106,8 +91,8 @@ Em ambos os casos, as mensagens que o R fornece ajudam a consertar o problema.
 * É possível instalar novos pacotes ao digitar 
 * `install.packages("packagename")`, onde `packagename` é o nome do pacote a ser instalado. 
 * É possível atualizar pacotes já instalados. A função utilizada é `update.packages()`.
-* É possível remover pacotes com função a *`remove.packages("packagename")` 
-* É possível tornar um pacote habilitado ao uso. A função neste caso é `library(packagename)`.
+* É possível remover pacotes com a função `remove.packages("packagename")` 
+* É possível tornar um pacote habilitado ao uso. A função usada neste caso é `library(packagename)`.
 
 ***
 Desafio 1
@@ -188,6 +173,8 @@ Instale os pacotes `ggplot2`, `plyr` e `gapminder`.
 
 A processo científico é de natureza incremental. Muitos projetos começam com notas ou códigos aleatórios e a partir disso surgem manuscritos. Eventualmente escritas e códigos se misturam.
 
+<p><img src="intro_pt2.png" align="middle"> 
+
 A maioria das pessas organizam seus projetos da seguinte maneira
 
 ![](http://swcarpentry.github.io/r-novice-gapminder/fig/bad_layout.png)
@@ -226,7 +213,7 @@ Agora, toda vez que iniciarmos uma sessão desse projeto no R ou RStudio, todo o 
 
 ## Melhores práticas aplicadas a organização de projetos
 
-Embora não exista a "MELHOR" forma de organizar um projeto, existem alguns princípios gerais que são consistentes com o objetico de deixar o gerenciamento de projetos mais simples.
+Embora não exista a `MELHOR` forma de organizar um projeto, existem alguns princípios gerais que são consistentes com o objetico de deixar o gerenciamento de projetos mais simples.
 
 ### Trate os dados apenas como leitura
 
@@ -265,7 +252,7 @@ Uma maneira de aumatizar o gerenciamento de projetos  se dá com a instalação do 
 2. Carregue o pacote
 3. Inicie o projeto:
 
-```{r, eval=FALSE}
+```{r,error=TRUE, echo=FALSE}
 install.packages("ProjectTemplate")
 library(ProjectTemplate)
 create.project("../my_project", merge.strategy = "allow.non.conflict")
@@ -273,7 +260,7 @@ create.project("../my_project", merge.strategy = "allow.non.conflict")
 
 ***
 
-Para mais informações sobre o pacote *ProjectTemplate* e suas funcionalidades acesse [ProjectTemplate](http://projecttemplate.net/index.html).
+Para mais informações sobre o pacote `ProjectTemplate` e suas funcionalidades acesse [ProjectTemplate](http://projecttemplate.net/index.html).
 
 ### Separe as funções das aplicações
 
@@ -284,7 +271,7 @@ O modo mais efetivo de trabalhar no R é brincando com os códigos na sessão inter
 
 É possível que o mesmo conjunto de dados e o mesmo script sejam usados em projetos distintos. De modo geral queremos evitar a duplicação de arquivos de modo a salvar espaço e não termos que atualizar o mesmo código em diferentes lugares.
 
-Quando este for o caso é interessante usar symbolic links, que são atalhos para arquivos que se encontram em outro lugare. No Linux e no OS X podemos usar o comando ln -s, no Windows podemos criar um atalho ou usar o comando mklink do terminal do windows.
+Quando este for o caso é interessante usar *symbolic links*, que são atalhos para arquivos que se encontram em outro lugares. No Linux e no OS X podemos usar o comando `ln -s`, no Windows podemos criar um atalho ou usar o comando `mklink` no terminal do windows.
 ***
 
 
