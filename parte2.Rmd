@@ -3,7 +3,12 @@ title: "Parte 2"
 author: "Mário"
 date: "11 de março de 2017"
 output: html_document
+    toc: true
+    toc_float:
+      collapsed: false
+      smooth_scroll: false
 ---
+
 ## Vetorização
 
 É de extrema relevância compreender que o R é vetorizado. Isso simplesmnte quer dizer que variáveis e funções podem receber vetores. 
@@ -144,6 +149,20 @@ Pontos chave
 ~~~~
 
 # Gerenciamento de projetos com RStudio
+***
+> Visão Geral:
+
+* **Ensino:** 20 min
+* **Exercícios:** 10 min
+
+* **Perguntas**
+    + Como eu posso gerenciar meus projetos no R no R?
+
+* **Objetivos**
+    + Ser capaz de criar projetos independentes com RStudio
+    + Ser capaz de usar o git com o RStudio
+
+***
 
 ## Introdução
 
@@ -215,7 +234,7 @@ Dica: Praticas interessantes em computação científica
 ~~~~
 
 ~~~~
-Dica: Modelo de projeto - uma possível
+> <p><img src="tap.JPG" align="middle"> Dica: Modelo de projeto - uma possível solução</p>
 
 Uma maneira de aumatizar o gerenciamento de projetos  se dá com a instalação do pacote ProjectTemplate. Esse pacote ofere uma estrutura considerada ideal para o bom gerenciamento do projeto. O pacote é útil porque mostra o fluxo de trabalho de forma organizada e estruturada. Com o RStudio e com o Git é possível ter controle total dos trabalhos, além de facilitar o compartilhamento dos arquivos com colaboradores.
 
@@ -237,7 +256,7 @@ Para mais informações sobre o pacote *ProjectTemplate* e suas funcionalidades ac
 O modo mais efetivo de trabalhar no R é brincando com os códigos na sessão interativa. Quando temos certeza de que os códigos funcionam e fazem o que queremos, copiamos para um arquivo de script. Também é possível salvar todos os comandos utilizados, para isso utilizamos a função *history()*. Utilizar essa função nem sempre é útil pois quando estamos desenvolvendo algum programa surgem muitos erros.
 
 ~~~~
-Dica: evite duplicação
+> <p><img src="tap.JPG" align="middle"> Dica: evite duplicação</p>
 
 É possível que o mesmo conjunto de dados e o mesmo script sejam usados em projetos distintos. De modo geral queremos evitar a duplicação de arquivos de modo a salvar espaço e não termos que atualizar o mesmo código em diferentes lugares.
 
