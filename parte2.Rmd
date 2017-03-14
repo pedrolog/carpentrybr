@@ -9,7 +9,7 @@ output: html_document
 
 ## Vetorização
 
-É de extrema relevância compreender que o R é vetorizado. Isso simplesmnte quer dizer que variáveis e funções podem receber vetores. 
+É de extrema relevância compreender que o R é um software vetorizado. Isso simplesmnte quer dizer que variáveis e funções podem receber vetores. 
 
 Veja os exemplos abaixo:
 
@@ -26,13 +26,13 @@ x <- 1:5
 2 ^ x
 ```
 
-A possibilidade de variáveis e funções receber valores faz do R um software extremamente poderoso. Este tópico essa abordado com mais detalhes adiante.
+A possibilidade de variáveis e funções receber valores faz do R um software extremamente poderoso. Este tópico será abordado em detalhes adiante.
 
 ## Controlando o ambiente de trabalho
 
 Existem alguns comandos que o usuário pode utilizar para interagir com o ambiente de trabalho do R.
 
-A função `ls` lista todas as variáveis e funções gravadas no ambiente de trabalho.
+A função `ls`, por exemplo, lista todas as variáveis e funções gravadas no ambiente de trabalho.
 
 ```{r}
 ls()
@@ -41,13 +41,13 @@ ls()
 ***
 > <p><img src="tap.JPG" align="middle"> Dica: Objetos escondidos</p>
  
-
-A função não mostra as variáveis e funções que começão com `.` Para listar todos os objetos, inclusive os que iniciam com `.`, digite `ls(all.names=TRUE)` e não `ls()`.
+A função `ls()`não mostra variáveis e funções que começão com `.`. Para listar todos os objetos, inclusive os que iniciam com `.`, digite `ls(all.names=TRUE)` e não `ls()`.
 
 Note que na função `ls` não é necessário fornecer argumentos, mas é necessário colocar parêntesis para que o R entenda que se trata de uma função.
+
 ***
 
-Perceba que se digitarmos apenas `ls`, o R nos fornece o código fonte da função.
+Se digitarmos apenas `ls` o R nos fornecerá o código fonte da função.
 
 ```{r}
 ls
@@ -71,7 +71,7 @@ No caso acima foi especificado que o resultado da função `ls` deveria ser usado 
 
 Se utilizarmos `<-` teremos efeitos indesejados ou  mensagens de erro.
 
-```{{r, error=TRUE, echo=TRUE}}
+```{{r, error=TRUE}}
 rm(list <- ls())
 ```
 
@@ -85,14 +85,13 @@ Em ambos os casos, as mensagens que o R fornece ajudam a consertar o problema.
 
 ## Pacotes do R
 
-É possível adicionar funções ao R através da escrita de pacote escritos por você mesmo, ou por pacotes escritos por outras pessoas. Hoje existam mais de 7000 pacotes disponíveis no CRAN (*the comprehensive R archive network*). O R e o Rstudio possuem são funcionais no quesito de gerenciamento de pacotes:
+É possível adicionar funções ao R através da escrita de pacote escritos por você mesmo, ou por pacotes escritos por outras pessoas. Hoje existem mais de 7000 pacotes disponíveis no CRAN (*the comprehensive R archive network*). O R e o Rstudio possuem elevada funcionalidade no quesito de gerenciamento de pacotes:
 
 * É possível ver quais pacotes estão instalados. Para isso devemos digitar `installed.packages()`.
-* É possível instalar novos pacotes ao digitar 
-* `install.packages("packagename")`, onde `packagename` é o nome do pacote a ser instalado. 
+* É possível instalar novos pacotes ao digitar `install.packages("packagename")`, onde `packagename` é o nome do pacote a ser instalado. 
 * É possível atualizar pacotes já instalados. A função utilizada é `update.packages()`.
-* É possível remover pacotes com a função `remove.packages("packagename")` 
-* É possível tornar um pacote habilitado ao uso. A função usada neste caso é `library(packagename)`.
+* É possível remover pacotes com a função `remove.packages("packagename")`. 
+* É possível tornar um pacote habilitado ao uso. A função utilizada neste caso é `library(packagename)`.
 
 ***
 Desafio 1
@@ -161,7 +160,7 @@ Instale os pacotes `ggplot2`, `plyr` e `gapminder`.
 * **Exercícios:** 10 min
 
 * **Perguntas**
-    + Como eu posso gerenciar meus projetos no R no R?
+    + Como eu posso gerenciar meus projetos no R ?
 
 * **Objetivos**
     + Ser capaz de criar projetos independentes com RStudio
@@ -171,7 +170,7 @@ Instale os pacotes `ggplot2`, `plyr` e `gapminder`.
 
 ## Introdução
 
-A processo científico é de natureza incremental. Muitos projetos começam com notas ou códigos aleatórios e a partir disso surgem manuscritos. Eventualmente escritas e códigos se misturam.
+O processo científico é de natureza incremental. Muitos projetos começam com notas ou códigos aleatórios e a partir disso surgem manuscritos. Eventualmente essas escritas e códigos se misturam.
 
 <p><img src="intro_pt2.png" align="middle"> 
 
@@ -179,21 +178,27 @@ A maioria das pessas organizam seus projetos da seguinte maneira
 
 ![](http://swcarpentry.github.io/r-novice-gapminder/fig/bad_layout.png)
 
-Por diversas razões SEMPRE devemos esse tipo de armazenamento de projetos:
+Por diversas razões SEMPRE devemos evitar esse tipo de armazenamento de projetos:
 
+***
 1. É difícil ver qual versão é a original e quais são as modificadas.
 2. Deste modo obtemos diversas extensões de arquivos na mesma pasta.
 3. Provavelmente iremos demorar bastante para para encontrar alguma coisa. Relacionar uma figura com o código que a gera, por exemplo.
+***
 
 Um bom *layout* pode facilitar bastante nossa vida. Algumas vantagens são:
+
+***
 * Nos ajuda a assegurar a integridade dos dados;
-* Facilita o compartilhamento dos códigos com outras pessoas (colega de laboratório, colaborador ou supervisor);
+* Facilita o compartilhamento dos códigos com outras pessoas (colegas de laboratório, colaboradores ou supervisores);
 * Facilita o processo de atualização dos códigos;
 * É mais fácil encontrar um projeto após algum tempo.
 
+***
+
 ## Uma possível solução
 
-Existem ferramentas e pacotes que nos ajudam a gerenciar nosso trabalho de forma efetiva.
+Existem ferramentas e pacotes que nos ajudam a gerenciar nosso trabalho de forma mais efetiva.
 
 Uma das melhores características do RStudio, são as funcionalidades oferecidas em termos de gerenciamento de projetos. Usaremos tais ferramentas para uma criar um projeto independente e passível de ser reproduzido.
 
@@ -201,15 +206,15 @@ Uma das melhores características do RStudio, são as funcionalidades oferecidas e
 Desafio: Criando um projeto independente
 
  1. Clique no botão File e então em  New Progect.
- 2. Clique em New Directory
- 3. Clique em Empty Project
+ 2. Clique em New Directory.
+ 3. Clique em Empty Project.
  4. Digite o nome do diretório que em que seu projeto será gravado.
- 5. Clique em Create a git  repository.
+ 5. Clique em Create a git repository.
  6. Clique em Create Projeto.
 
 ***
  
-Agora, toda vez que iniciarmos uma sessão desse projeto no R ou RStudio, todo o trabalho estará inteiramente contido neste diretório. 
+Agora, toda vez que iniciarmos uma sessão desse projeto no RStudio todo o trabalho estará inteiramente contido neste diretório. 
 
 ## Melhores práticas aplicadas a organização de projetos
 
@@ -217,17 +222,17 @@ Embora não exista a `MELHOR` forma de organizar um projeto, existem alguns princ
 
 ### Trate os dados apenas como leitura
 
-Este é provavelmente o principal objetivo ao organizar um projeto. Dados geralmente são difíceis de se coletar. Trabalhar com dados em programas interativos (Excel) onde eles podem ser modificados atrapalha, pois não temos certeza de onde os dados vieram ou como foram modificados desde a coleta. Para evitar este tipo de problema é melhor trabalhar os dados como arquivos apenas para leitura.
+Este é provavelmente o principal objetivo ao organizar um projeto. Dados geralmente são difíceis de se coletar. Trabalhar com dados em programas interativos (Excel) onde eles podem ser modificados atrapalha. Isso porque não temos certeza de onde os dados vieram ou como foram modificados desde a coleta. Para evitar este tipo de problema é recomendável trabalhar os dados como arquivos apenas para leitura.
 
 ### Limpeza dos dados
 
-Em muitos casos os dados são "sujos". Nestes casos é extremamente difícil transformar os dados até que  eles sejam passíveis de serem lidos pelo R (ou qualquer outro programa). Esta tarefa é geralmente chamada de "data munging". Quando alterações devem ser feitas no conjunto de dados original, é aconselhável criar um segundo arquivo de leitura em uma pasta separada.
+Em muitos casos os dados são "sujos". Nestes casos é extremamente difícil transformar os dados até que eles sejam passíveis de serem lidos pelo R (ou qualquer outro programa). Esta tarefa é geralmente chamada de "data munging". Quando alterações devem ser feitas no conjunto de dados original, é aconselhável criar um segundo arquivo de leitura em uma pasta separada.
 
 ### Trate as saídas como dispensáveis
 
-Qualquer coisa gerada pelos scripts devem ser tratados como dispensáveis. Devemos ser capazes de recriar as alterações feitas a partir do script.
+Quaisquer coisas geradas pelos scripts devem ser tratadas como dispensáveis. Devemos ser capazes de recriar as alterações ou análises feitas a partir do script.
 
-Existem diversas maneiras de gerenciar os outputs. É interessante termos uma pasta com subdiretórios para cada análise que formos fazer. Desta maneira é mais fácil encontrar as análises de interesse, pois ao mesmo tempo que nem todas as análises feitas são utilizadas no trabalho final, outras poderão ser aplicadas em outros.
+Existem diversas maneiras de gerenciar os outputs. É interessante termos uma pasta com subdiretórios para cada análise que formos fazer. Desta maneira é mais fácil encontrar as análises de interesse, pois ao mesmo tempo que nem todas as análises feitas são utilizadas no trabalho final, outras poderão ser aplicadas em outros projetos.
 
 ***
 > <p><img src="tap.JPG" align="middle">Dica: Praticas interessantes em computação científica</p>
@@ -236,9 +241,9 @@ Existem diversas maneiras de gerenciar os outputs. É interessante termos uma pas
 [Boas práticas em computação científica](https://github.com/swcarpentry/good-enough-practices-in-scientific-computing/blob/gh-pages/good-enough-practices-for-scientific-computing.pdf) sugerem as recomendações para uma boa organização de projetos:
 
 1. Coloque cada projeto em seu próprio diretório. O diretório deve ser nomeado após o projeto.
-2. Coloque documentos de textos associados a um diretório doc.
-3. Coloque os dados puros no diretório data, os dados alterados e os dados limpos devem ser colocados em uma pasta results.
-4. Coloque os scripts e os programas em um diretório src. Os programas importados de outros locais devem ser alocados no diretório bin.
+2. Coloque documentos de textos associados a um diretório `doc`.
+3. Coloque os dados puros no diretório `data`, os dados alterados e os dados limpos devem ser colocados em uma pasta `results`.
+4. Coloque os scripts e os programas em um diretório `src`. Os programas importados de outros locais devem ser alocados no diretório `bin`.
 5. Escolha nomes que indiquem a função de cada arquivo.
 
 ***
@@ -246,7 +251,7 @@ Existem diversas maneiras de gerenciar os outputs. É interessante termos uma pas
 ***
 > <p><img src="tap.JPG" align="middle"> Dica: Modelo de projeto - uma possível solução</p>
 
-Uma maneira de aumatizar o gerenciamento de projetos  se dá com a instalação do pacote ProjectTemplate. Esse pacote ofere uma estrutura considerada ideal para o bom gerenciamento do projeto. O pacote é útil porque mostra o fluxo de trabalho de forma organizada e estruturada. Com o RStudio e com o Git é possível ter controle total dos trabalhos, além de facilitar o compartilhamento dos arquivos com colaboradores.
+Uma maneira de automatizar o gerenciamento de projetos se dá com a instalação do pacote `ProjectTemplate`. Esse pacote oferece uma estrutura que é considerada ideal para o bom gerenciamento do projeto. O pacote é útil porque mostra o fluxo de trabalho de forma organizada e estruturada. Com o RStudio e com o Git é possível ter controle total dos trabalhos, além de facilitar o compartilhamento dos arquivos com colaboradores.
 
 1. Instale o pacote ProjectTemplate
 2. Carregue o pacote
@@ -264,14 +269,14 @@ Para mais informações sobre o pacote `ProjectTemplate` e suas funcionalidades ac
 
 ### Separe as funções das aplicações
 
-O modo mais efetivo de trabalhar no R é brincando com os códigos na sessão interativa. Quando temos certeza de que os códigos funcionam e fazem o que queremos, copiamos para um arquivo de script. Também é possível salvar todos os comandos utilizados, para isso utilizamos a função *history()*. Utilizar essa função nem sempre é útil pois quando estamos desenvolvendo algum programa surgem muitos erros.
+O modo mais efetivo de trabalhar no R é brincando com os códigos na sessão interativa. Quando temos certeza de que os códigos funcionam e fazem o que queremos, copiamos para um arquivo de script. Também é possível salvar todos os comandos utilizados, para isso utilizamos a função *history()*. Utilizar essa função nem sempre é útil pois quando estamos desenvolvendo algum programa novo surgem muitos erros.
 
 ***
 > <p><img src="tap.JPG" align="middle"> Dica: evite duplicação</p>
 
 É possível que o mesmo conjunto de dados e o mesmo script sejam usados em projetos distintos. De modo geral queremos evitar a duplicação de arquivos de modo a salvar espaço e não termos que atualizar o mesmo código em diferentes lugares.
 
-Quando este for o caso é interessante usar *symbolic links*, que são atalhos para arquivos que se encontram em outro lugares. No Linux e no OS X podemos usar o comando `ln -s`, no Windows podemos criar um atalho ou usar o comando `mklink` no terminal do windows.
+Quando este for o caso é interessante usar *symbolic links*, que são atalhos para arquivos que se encontram em outro lugares. No Linux e no OS X podemos usar o comando `ln -s`, no Windows podemos criar um atalho ou usar o comando `mklink` no terminal de comandos.
 ***
 
 
