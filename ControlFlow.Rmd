@@ -223,13 +223,13 @@ while(z > 0.1){
 
 ***
 
-<input type=button id=toggle_d8 value="Desafio 2"></input>
+<input type=button id=toggle_d71 value="Desafio 2"></input>
 
 
 Compare os objetos `output_vector` e `output_vector2`. Eles são iguais? Se não, por que não? Como você poderia mudar o último bloco do código para fazer `output_vector2` ser igual a `output_vector`?
 
 
-<input type=button id=toggle_d7 value="Resposta do desafio 2"></input>
+<input type=button id=toggle_d72 value="Resposta do desafio 2"></input>
 
 
 Podemos checar se os dois vetoes são idênticos usando a função all():
@@ -285,55 +285,55 @@ output_matrix[j, i] <- temp_output
 ```
 
 <script>
-$("#toggle_d8").parent().next().hide();
+$("#toggle_d71").parent().next().hide();
 
-$("#toggle_d8").on( "click", function(){
-  $("#toggle_d8").parent().next().toggle();
+$("#toggle_d71").on( "click", function(){
+  $("#toggle_d71").parent().next().toggle();
   } );
-$("#toggle_d7").parent().next().hide();
-$("#toggle_d7").parent().next().next().hide();
-$("#toggle_d7").parent().next().next().next().hide();
-$("#toggle_d7").parent().next().next().next().next().hide();
-$("#toggle_d7").parent().next().next().next().next().next().hide();
-$("#toggle_d7").parent().next().next().next().next().next().next().hide();
-$("#toggle_d7").parent().next().next().next().next().next().next().next().hide();
-$("#toggle_d7").parent().next().next().next().next().next().next().next().next().hide();
-$("#toggle_d7").parent().next().next().next().next().next().next().next().next().next().hide();
-$("#toggle_d7").parent().next().next().next().next().next().next().next().next().next().next().hide();
-$("#toggle_d7").parent().next().next().next().next().next().next().next().next().next().next().next().hide();
-$("#toggle_d7").parent().next().next().next().next().next().next().next().next().next().next().next().next().hide();
-$("#toggle_d7").parent().next().next().next().next().next().next().next().next().next().next().next().next().next().hide();
-$("#toggle_d7").parent().next().next().next().next().next().next().next().next().next().next().next().next().next().next().hide();
-$("#toggle_d7").parent().next().next().next().next().next().next().next().next().next().next().next().next().next().next().next().hide();
-$("#toggle_d7").parent().next().next().next().next().next().next().next().next().next().next().next().next().next().next().next().next().hide();
-$("#toggle_d7").parent().next().next().next().next().next().next().next().next().next().next().next().next().next().next().next().next().next().hide();
-$("#toggle_d7").on( "click", function(){
-  $("#toggle_d7").parent().next().toggle();
-  $("#toggle_d7").parent().next().next().toggle();
-  $("#toggle_d7").parent().next().next().next().toggle();
-  $("#toggle_d7").parent().next().next().next().next().toggle();
-  $("#toggle_d7").parent().next().next().next().next().next().toggle();
-  $("#toggle_d7").parent().next().next().next().next().next().next().toggle();
-  $("#toggle_d7").parent().next().next().next().next().next().next().next().toggle();
-  $("#toggle_d7").parent().next().next().next().next().next().next().next().next().toggle();
-  $("#toggle_d7").parent().next().next().next().next().next().next().next().next().next().toggle();
-  $("#toggle_d7").parent().next().next().next().next().next().next().next().next().next().next().next().toggle();
-  $("#toggle_d7").parent().next().next().next().next().next().next().next().next().next().next().next().next().toggle();
-  $("#toggle_d7").parent().next().next().next().next().next().next().next().next().next().next().next().next().next().toggle();
-  $("#toggle_d7").parent().next().next().next().next().next().next().next().next().next().next().next().next().next().next().toggle();
-  $("#toggle_d7").parent().next().next().next().next().next().next().next().next().next().next().next().next().next().next().next().toggle();
-  $("#toggle_d7").parent().next().next().next().next().next().next().next().next().next().next().next().next().next().next().next().next().toggle();
-  $("#toggle_d7").parent().next().next().next().next().next().next().next().next().next().next().next().next().next().next().next().next().next().toggle();
+$("#toggle_d72").parent().next().hide();
+$("#toggle_d72").parent().next().next().hide();
+$("#toggle_d72").parent().next().next().next().hide();
+$("#toggle_d72").parent().next().next().next().next().hide();
+$("#toggle_d72").parent().next().next().next().next().next().hide();
+$("#toggle_d72").parent().next().next().next().next().next().next().hide();
+$("#toggle_d72").parent().next().next().next().next().next().next().next().hide();
+$("#toggle_d72").parent().next().next().next().next().next().next().next().next().hide();
+$("#toggle_d72").parent().next().next().next().next().next().next().next().next().next().hide();
+$("#toggle_d72").parent().next().next().next().next().next().next().next().next().next().next().hide();
+$("#toggle_d72").parent().next().next().next().next().next().next().next().next().next().next().next().hide();
+$("#toggle_d72").parent().next().next().next().next().next().next().next().next().next().next().next().next().hide();
+$("#toggle_d72").parent().next().next().next().next().next().next().next().next().next().next().next().next().next().hide();
+$("#toggle_d72").parent().next().next().next().next().next().next().next().next().next().next().next().next().next().next().hide();
+$("#toggle_d72").parent().next().next().next().next().next().next().next().next().next().next().next().next().next().next().next().hide();
+$("#toggle_d72").parent().next().next().next().next().next().next().next().next().next().next().next().next().next().next().next().next().hide();
+$("#toggle_d72").parent().next().next().next().next().next().next().next().next().next().next().next().next().next().next().next().next().next().hide();
+$("#toggle_d72").on( "click", function(){
+  $("#toggle_d72").parent().next().toggle();
+  $("#toggle_d72").parent().next().next().toggle();
+  $("#toggle_d72").parent().next().next().next().toggle();
+  $("#toggle_d72").parent().next().next().next().next().toggle();
+  $("#toggle_d72").parent().next().next().next().next().next().toggle();
+  $("#toggle_d72").parent().next().next().next().next().next().next().toggle();
+  $("#toggle_d72").parent().next().next().next().next().next().next().next().toggle();
+  $("#toggle_d72").parent().next().next().next().next().next().next().next().next().toggle();
+  $("#toggle_d72").parent().next().next().next().next().next().next().next().next().next().toggle();
+  $("#toggle_d72").parent().next().next().next().next().next().next().next().next().next().next().next().toggle();
+  $("#toggle_d72").parent().next().next().next().next().next().next().next().next().next().next().next().next().toggle();
+  $("#toggle_d72").parent().next().next().next().next().next().next().next().next().next().next().next().next().next().toggle();
+  $("#toggle_d72").parent().next().next().next().next().next().next().next().next().next().next().next().next().next().next().toggle();
+  $("#toggle_d72").parent().next().next().next().next().next().next().next().next().next().next().next().next().next().next().next().toggle();
+  $("#toggle_d72").parent().next().next().next().next().next().next().next().next().next().next().next().next().next().next().next().next().toggle();
+  $("#toggle_d72").parent().next().next().next().next().next().next().next().next().next().next().next().next().next().next().next().next().next().toggle();
 } );
 </script>
 
 ***
 
-<input type=button id=toggle_d1 value="Desafio 3"></input>
+<input type=button id=toggle_d73 value="Desafio 3"></input>
 
 Escreva um script que que faça um loop nos dados `gapminder` por continente e imprima se a média da expectativa de vida é menor ou maior do que 50 anos.
 
-<input type=button id=toggle_d2 value="Resposta do desafio 3"></input>
+<input type=button id=toggle_d74 value="Resposta do desafio 3"></input>
 
 **Passo 1:** Queremos ter certeza que conseguimos extrair todos os valores únicos do vetor continente.
 
@@ -378,55 +378,55 @@ for( iContinent in unique(gapminder$continent) ){
 ```
 
 <script>
-$("#toggle_d1").parent().next().hide();
+$("#toggle_d73").parent().next().hide();
 
-$("#toggle_d1").on( "click", function(){
-  $("#toggle_d1").parent().next().toggle();
+$("#toggle_d73").on( "click", function(){
+  $("#toggle_d73").parent().next().toggle();
   } );
-$("#toggle_d2").parent().next().hide();
-$("#toggle_d2").parent().next().next().hide();
-$("#toggle_d2").parent().next().next().next().hide();
-$("#toggle_d2").parent().next().next().next().next().hide();
-$("#toggle_d2").parent().next().next().next().next().next().hide();
-$("#toggle_d2").parent().next().next().next().next().next().next().hide();
-$("#toggle_d2").parent().next().next().next().next().next().next().next().hide();
-$("#toggle_d2").parent().next().next().next().next().next().next().next().next().hide();
-$("#toggle_d2").parent().next().next().next().next().next().next().next().next().next().hide();
-$("#toggle_d2").parent().next().next().next().next().next().next().next().next().next().next().hide();
-$("#toggle_d2").parent().next().next().next().next().next().next().next().next().next().next().next().hide();
-$("#toggle_d2").parent().next().next().next().next().next().next().next().next().next().next().next().next().hide();
-$("#toggle_d2").parent().next().next().next().next().next().next().next().next().next().next().next().next().next().hide();
-$("#toggle_d2").parent().next().next().next().next().next().next().next().next().next().next().next().next().next().next().hide();
-$("#toggle_d2").parent().next().next().next().next().next().next().next().next().next().next().next().next().next().next().next().hide();
-$("#toggle_d2").parent().next().next().next().next().next().next().next().next().next().next().next().next().next().next().next().next().hide();
-$("#toggle_d2").parent().next().next().next().next().next().next().next().next().next().next().next().next().next().next().next().next().next().hide();
-$("#toggle_d2").on( "click", function(){
-  $("#toggle_d2").parent().next().toggle();
-  $("#toggle_d2").parent().next().next().toggle();
-  $("#toggle_d2").parent().next().next().next().toggle();
-  $("#toggle_d2").parent().next().next().next().next().toggle();
-  $("#toggle_d2").parent().next().next().next().next().next().toggle();
-  $("#toggle_d2").parent().next().next().next().next().next().next().toggle();
-  $("#toggle_d2").parent().next().next().next().next().next().next().next().toggle();
-  $("#toggle_d2").parent().next().next().next().next().next().next().next().next().toggle();
-  $("#toggle_d2").parent().next().next().next().next().next().next().next().next().next().toggle();
-  $("#toggle_d2").parent().next().next().next().next().next().next().next().next().next().next().next().toggle();
-  $("#toggle_d2").parent().next().next().next().next().next().next().next().next().next().next().next().next().toggle();
-  $("#toggle_d2").parent().next().next().next().next().next().next().next().next().next().next().next().next().next().toggle();
-  $("#toggle_d2").parent().next().next().next().next().next().next().next().next().next().next().next().next().next().next().toggle();
-  $("#toggle_d2").parent().next().next().next().next().next().next().next().next().next().next().next().next().next().next().next().toggle();
-  $("#toggle_d2").parent().next().next().next().next().next().next().next().next().next().next().next().next().next().next().next().next().toggle();
-  $("#toggle_d2").parent().next().next().next().next().next().next().next().next().next().next().next().next().next().next().next().next().next().toggle();
+$("#toggle_d74").parent().next().hide();
+$("#toggle_d74").parent().next().next().hide();
+$("#toggle_d74").parent().next().next().next().hide();
+$("#toggle_d74").parent().next().next().next().next().hide();
+$("#toggle_d74").parent().next().next().next().next().next().hide();
+$("#toggle_d74").parent().next().next().next().next().next().next().hide();
+$("#toggle_d74").parent().next().next().next().next().next().next().next().hide();
+$("#toggle_d74").parent().next().next().next().next().next().next().next().next().hide();
+$("#toggle_d74").parent().next().next().next().next().next().next().next().next().next().hide();
+$("#toggle_d74").parent().next().next().next().next().next().next().next().next().next().next().hide();
+$("#toggle_d74").parent().next().next().next().next().next().next().next().next().next().next().next().hide();
+$("#toggle_d74").parent().next().next().next().next().next().next().next().next().next().next().next().next().hide();
+$("#toggle_d74").parent().next().next().next().next().next().next().next().next().next().next().next().next().next().hide();
+$("#toggle_d74").parent().next().next().next().next().next().next().next().next().next().next().next().next().next().next().hide();
+$("#toggle_d74").parent().next().next().next().next().next().next().next().next().next().next().next().next().next().next().next().hide();
+$("#toggle_d74").parent().next().next().next().next().next().next().next().next().next().next().next().next().next().next().next().next().hide();
+$("#toggle_d74").parent().next().next().next().next().next().next().next().next().next().next().next().next().next().next().next().next().next().hide();
+$("#toggle_d74").on( "click", function(){
+  $("#toggle_d74").parent().next().toggle();
+  $("#toggle_d74").parent().next().next().toggle();
+  $("#toggle_d74").parent().next().next().next().toggle();
+  $("#toggle_d74").parent().next().next().next().next().toggle();
+  $("#toggle_d74").parent().next().next().next().next().next().toggle();
+  $("#toggle_d74").parent().next().next().next().next().next().next().toggle();
+  $("#toggle_d74").parent().next().next().next().next().next().next().next().toggle();
+  $("#toggle_d74").parent().next().next().next().next().next().next().next().next().toggle();
+  $("#toggle_d74").parent().next().next().next().next().next().next().next().next().next().toggle();
+  $("#toggle_d74").parent().next().next().next().next().next().next().next().next().next().next().next().toggle();
+  $("#toggle_d74").parent().next().next().next().next().next().next().next().next().next().next().next().next().toggle();
+  $("#toggle_d74").parent().next().next().next().next().next().next().next().next().next().next().next().next().next().toggle();
+  $("#toggle_d74").parent().next().next().next().next().next().next().next().next().next().next().next().next().next().next().toggle();
+  $("#toggle_d74").parent().next().next().next().next().next().next().next().next().next().next().next().next().next().next().next().toggle();
+  $("#toggle_d74").parent().next().next().next().next().next().next().next().next().next().next().next().next().next().next().next().next().toggle();
+  $("#toggle_d74").parent().next().next().next().next().next().next().next().next().next().next().next().next().next().next().next().next().next().toggle();
 } );
 </script>
 
 ***
 
-<input type=button id=toggle_d3 value="Desafio 4"></input>
+<input type=button id=toggle_d75 value="Desafio 4"></input>
 
 Modifique o script do Desafio 3 para fazer loop em cada país. Mas deverá imprimir se a expectativa de vida é menor do que 50 anos, entre 50 e 70 anos, ou maior do que 70 anos.
 
-<input type=button id=toggle_d4 value="Resposta do desafio 4"></input>
+<input type=button id=toggle_d76 value="Resposta do desafio 4"></input>
 
 Nós modificamos a solução do Desafio 3 adicionando 2 valores limiares (limiar inferior e limiar superior) e estendendo as instruções `if-else`:
 
@@ -453,27 +453,27 @@ for( iCountry in unique(gapminder$country) ){
 ```
 
 <script>
-$("#toggle_d3").parent().next().hide();
+$("#toggle_d75").parent().next().hide();
 
-$("#toggle_d3").on( "click", function(){
-  $("#toggle_d3").parent().next().toggle();
+$("#toggle_d75").on( "click", function(){
+  $("#toggle_d75").parent().next().toggle();
   } );
-$("#toggle_d4").parent().next().hide();
-$("#toggle_d4").parent().next().next().hide();
-$("#toggle_d4").on( "click", function(){
-  $("#toggle_d4").parent().next().toggle();
-  $("#toggle_d4").parent().next().next().toggle();
+$("#toggle_d76").parent().next().hide();
+$("#toggle_d76").parent().next().next().hide();
+$("#toggle_d76").on( "click", function(){
+  $("#toggle_d76").parent().next().toggle();
+  $("#toggle_d76").parent().next().next().toggle();
 } );
 </script>
 
 ***
 
 
-<input type=button id=toggle_d5 value="Desafio 5 - Avançado"></input>
+<input type=button id=toggle_d77 value="Desafio 5 - Avançado"></input>
 
 Escreva um script que faça loop em cada país da base de dados `gapminder`, teste se o país começa com "B", e faça um gráfico de linha (Expectativa de vida X Tempo) se a média da expectativa de vida é menor que 50 anos.
 
-<input type=button id=toggle_d6 value="Resposta do desafio 5"></input>
+<input type=button id=toggle_d78 value="Resposta do desafio 5"></input>
 
 Vamos usar o comando `grep`, que foi introduzido na lição *Unix Shell* para encontrar quais países começam com "B". Vamos entender como fazer isso primeiro. Seguindo a seção da lição *Unix Shell* somos tentados a tentar o seguinte:
 
@@ -516,24 +516,24 @@ for( iCountry in paisesCandidatos){
 ```
 
 <script>
-$("#toggle_d5").parent().next().hide();
+$("#toggle_d77").parent().next().hide();
 
-$("#toggle_d5").on( "click", function(){
-  $("#toggle_d5").parent().next().toggle();
+$("#toggle_d77").on( "click", function(){
+  $("#toggle_d77").parent().next().toggle();
   } );
-$("#toggle_d6").parent().next().hide();
-$("#toggle_d6").parent().next().next().hide();
-$("#toggle_d6").parent().next().next().next().hide();
-$("#toggle_d6").parent().next().next().next().next().hide();
-$("#toggle_d6").parent().next().next().next().next().next().hide();
-$("#toggle_d6").parent().next().next().next().next().next().next().hide();
-$("#toggle_d6").on( "click", function(){
-  $("#toggle_d6").parent().next().toggle();
-  $("#toggle_d6").parent().next().next().toggle();
-  $("#toggle_d6").parent().next().next().next().toggle();
-  $("#toggle_d6").parent().next().next().next().next().toggle();
-  $("#toggle_d6").parent().next().next().next().next().next().toggle();
-  $("#toggle_d6").parent().next().next().next().next().next().next().toggle();
+$("#toggle_d78").parent().next().hide();
+$("#toggle_d78").parent().next().next().hide();
+$("#toggle_d78").parent().next().next().next().hide();
+$("#toggle_d78").parent().next().next().next().next().hide();
+$("#toggle_d78").parent().next().next().next().next().next().hide();
+$("#toggle_d78").parent().next().next().next().next().next().next().hide();
+$("#toggle_d78").on( "click", function(){
+  $("#toggle_d78").parent().next().toggle();
+  $("#toggle_d78").parent().next().next().toggle();
+  $("#toggle_d78").parent().next().next().next().toggle();
+  $("#toggle_d78").parent().next().next().next().next().toggle();
+  $("#toggle_d78").parent().next().next().next().next().next().toggle();
+  $("#toggle_d78").parent().next().next().next().next().next().next().toggle();
  } );
 </script>
 
