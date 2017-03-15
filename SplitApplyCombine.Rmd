@@ -10,6 +10,7 @@ output:
 ```{r include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
+
 # Split-Apply-Combine
 
 ***
@@ -17,9 +18,9 @@ knitr::opts_chunk$set(echo = TRUE)
 * **Ensino:** 30 mim
 * **Exercícios:** 30 mim 
 * **Questões:**
-  Como posso fazer diferentes cálculos em diferentes conjuntos de dados?  
+    + Como posso fazer diferentes cálculos em diferentes conjuntos de dados?  
 * **Objetivos:**
-  Poder usar a estratégia de split-apply-combine para análise de dados.  
+    + Poder usar a estratégia de split-apply-combine para análise de dados.  
 
 ***
 
@@ -74,7 +75,7 @@ O problema que estamos revelando aqui é conhecido como "split-apply-combine":
 Nós queremos *dividir* nossos dados em grupos, neste caso continentes, *aplicar* alguns cálculos nesse grupo, e depois opcionalmente *combinar* os resultados. 
 
 ##O pacote plyr
-Para alguns de vocês que tem usado R antes, poderia estar familiarizado com o uso de família de funções. Agora, vamos apresentar outro método para resolver o problema “split-apply-combine”. O pacote `plyr` fornece um conjunto de funções que encontraremos mais agradáveis para resolver este problema.
+Para alguns de vocês que tem usado R antes, poderia estar familiarizado com o uso de família de funções. Agora, vamos apresentar outro método para resolver o problema “split-apply-combine”. O pacote [plyr](http://had.co.nz/plyr/) fornece um conjunto de funções que encontraremos mais agradáveis para resolver este problema.
 
 Instalamos este pacote em uma tarefa anterior. Vamos carregá-lo agora:
 
@@ -168,27 +169,45 @@ d_ply(
 ```
 
 ***
-###Dica: apresentação de números                                                   
+####Dica: apresentação de números                                                   
 A função `format` pode ser usada para melhorar a apresentação dos valores numéricos em mensagens
 
 ***
 
-###Desafio 1
+<input type=button id=toggle_d1 value="Desafio 1"></input>
 ```
 Calcule a média da esperança de vida por continente. Qual tem a maior? Qual tem a menor?
 ```
-
-###Desafio 2
+<script>
+$("#toggle_d1").parent().next().hide();
+$("#toggle_d1").on( "click", function(){
+$("#toggle_d1").parent().next().toggle();
+} );
+</script>
+ 
+<input type=button id=toggle_d2 value="Desafio 2"></input>
 ```
 Calcule a média da esperança de vida por continente e ano. Qual tinha a maior e a menor em 2017? Qual apresenta a maior mudança entre os anos 1952 e 2007?
 ```
-
-###Desafio Avançado
+<script>
+$("#toggle_d2").parent().next().hide();
+$("#toggle_d2").on( "click", function(){
+$("#toggle_d2").parent().next().toggle();
+} );
+</script>
+ 
+<input type=button id=toggle_d3 value="Desafio Avançado"></input>
 ```
 Calcule a diferença das médias da esperança de vida entre os anos 1952 e 2007 usando os resultados do desafio 2 (use uma das funções de plyr).
 ```
+<script>
+$("#toggle_d3").parent().next().hide();
+$("#toggle_d3").on( "click", function(){
+$("#toggle_d3").parent().next().toggle();
+} );
+</script>
 
-###Desafio Alternativo se a aula parece perdida
+<input type=button id=toggle_d4 value="Desafio Alternativo se a aula parece perdida"></input>
 ```
 Sem executá-lo, qual dos segintes códigos calculará a média da esperança de vida por continente:
 ```
@@ -238,9 +257,32 @@ adply(
   }
 )
 ```
+<script>
+$("#toggle_d4").parent().next().hide();
+$("#toggle_d4").parent().next().next().hide();
+$("#toggle_d4").parent().next().next().next().hide();
+$("#toggle_d4").parent().next().next().next().next().hide();
+$("#toggle_d4").parent().next().next().next().next().next().hide();
+$("#toggle_d4").parent().next().next().next().next().next().next().hide();
+$("#toggle_d4").parent().next().next().next().next().next().next().next().hide();
+$("#toggle_d4").parent().next().next().next().next().next().next().next().next().hide();
+$("#toggle_d4").parent().next().next().next().next().next().next().next().next().next().hide();
+$("#toggle_d4").on( "click", function(){
+$("#toggle_d4").parent().next().toggle();
+$("#toggle_d4").parent().next().next().toggle();
+$("#toggle_d4").parent().next().next().next().toggle();
+$("#toggle_d4").parent().next().next().next().next().toggle();
+$("#toggle_d4").parent().next().next().next().next().next().toggle();
+$("#toggle_d4").parent().next().next().next().next().next().next().toggle();
+$("#toggle_d4").parent().next().next().next().next().next().next().next().toggle();
+$("#toggle_d4").parent().next().next().next().next().next().next().next().next().toggle();
+$("#toggle_d4").parent().next().next().next().next().next().next().next().next().next().toggle();
+} );
+</script>
+
 
 ***
-###Pontos Chaves
+###Pontos Chave
 * Use o pacote `plyr` para dividir dados, aplicar funções aos subconjuntos e combinar os resultados.
 
 ***
