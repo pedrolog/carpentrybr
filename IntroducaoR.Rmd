@@ -9,11 +9,13 @@ output: html_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-# Introdução ao R e RStudio 
+# Introdução ao R e RStudio  
 
-###Visão Geral
-**Ensino:** 45 min  
-**Exercicios:** 10 min  
+
+###Visão Geral  
+**Ensino:** 45 min    
+**Exercicios:** 10 min    
+
 
 **Questões**    
 
@@ -87,7 +89,7 @@ O RStudio oferece-lhe uma grande flexibilidade na execução de código a partir
 
 ## Introdução a R  
 
-Grande parte do seu tempo em R será gasto no console interativo R. Isto é onde você irá executar todo o seu código, e pode ser um ambiente útil para experimentar idéias antes de adicioná-los a um arquivo de script R. Este console no RStudio é o mesmo que você obteria se você digitou R em seu ambiente de linha de comando.  
+A maior parte do seu tempo em R será gasto no console interativo R. Isto é onde você irá executar todo o seu código, e pode ser um ambiente útil para experimentar idéias antes de adicioná-los a um arquivo de script R. Este console no RStudio é o mesmo que você obteria se você digitou R em seu ambiente de linha de comando.  
 
 A primeira coisa que você vai ver na sessão interativa R é um monte de informações, seguido por um ">" e um cursor piscando. Em muitos aspectos isso é semelhante ao ambiente de shell que você aprendeu durante as lições do shell: ele opera na mesma idéia de um "Read, evaluate, print loop": você digita comandos, R tenta executá-los e, em seguida, retorna um resultado.  
 
