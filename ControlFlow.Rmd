@@ -1,5 +1,5 @@
 ---
-title: "7. Control Flow"
+title: "7. Controle de Fluxo"
 output: html_document
 ---
 
@@ -14,19 +14,20 @@ output: html_document
 
 **Questões** 
 
-* Como fazer escolhas dependentes dos dados em R?
+* Como tomar decisões condicionadas aos dados no R?
 * Como posso repetir operações no R?
 
 **Objetivos**
 
-* Escrever instruções condicionais com `if()` e `else()`.
-* Escrever e entender `for()` loops.
+* Escrever comandos condicionais com `if()` e `else()`.
+* Escrever e entender o laço `for()`.
 
 ***
 
-Muitas vezes, quando estamos programando queremos controlar o fluxo de nossas ações. Isto pode ser feito definindo ações para ocorrer apenas se uma condição ou conjunto de condições forem satisfeitas. Alternativamente, podemos também definir uma ação para ocorrer em determinado número de vezes.
+Muitas vezes quando estamos programando queremos controlar o fluxo de nossas ações. Isto pode ser feito definindo ações (comandos) para ocorrer apenas quando uma condição ou um conjunto de condições forem satisfeitas. Uma outra alternativa é definir um conjunto de ações para ocorrer determinado número de vezes. Vale ressaltar que o R utiliza da língua inglesa para seus comandos, assim, a condição "se" é descrita como "if".
 
-Existem várias maneiras que você pode controlar o fluxo no R. Para instruções condicionais, as abordagens mais utilizadas são as construções:
+Existem várias maneiras de se controlar o fluxo no R. Para sentenças que são condicionadas, as abordagens mais utilizadas são as seguintes:
+
 
 ```{r,eval=FALSE}
 # if
@@ -42,10 +43,10 @@ if (condição é verdadeira) {
 }
 ```
 
-Digamos, por exemplo, que queremos que o R imprima uma mensagem se uma variável x tem um valor em particular:
+Digamos, por exemplo, que queremos que o R mostre uma mensagem se uma variável x tem um valor em particular:
 
 ```{r}
-# amostra de um número aleatório de uma distribuição de Poisson
+# amostre um número aleatório de uma distribuição de Poisson
 # com média (lambda) 8
 
 x <- rpois(1, lambda=8)
@@ -58,9 +59,9 @@ x
 
 ```
 
-Note que você não pode obter a mesma saída que o seu vizinho, porque vocês podem estar amostrando diferentes números aleatórios a partir da mesma distribuição.
+Note que você pode não está obtendo a mesma saída que o seu colega, isto porque mesmo sendo números da mesma distribuição, estes são aleatórios.
 
-Vamos definir um *seed* para que todos nós possamos gerar o mesmo número de "pseudo-aleatórios", e, em seguida, imprimir mais informações:
+Vamos definir um *seed*, semente, para que todos nós possamos gerar números "pseudo-aleatórios", e, em seguida, mostrar mais informações:
 
 ```{r}
 set.seed(10)
@@ -69,30 +70,30 @@ x <- rpois(1, lambda=8)
 if (x >= 10) {
   print("x é maior ou igual a 10")
 } else if (x > 5) {
-  print("x é maior que 5")
+  print("x ? maior que 5")
 } else {
-  print("x é menor que 5")
+  print("x ? menor que 5")
 }
 
 ```
 
 ***
-### Dica: Pseudo Números Aleatórios
+### Dica: Números pseudo-aleatórios
 
-No caso acima, a função `rpois()` gera um número aleatório a partir de uma distribuição de Poisson com uma média (ou seja, lambda) de 8. A função `set.seed()` garante que todas as máquinas irão gerar o mesmo número de pseudo-aleatórios [(mais sobre números pseudo-aleatórios)](https://en.wikibooks.org/wiki/R_Programming/Random_Number_Generation). Então se definirmos `set.seed(10)`, vemos que x toma o valor 8. Você deve obter o mesmo número.
+No caso acima, a função `rpois()` gera um número aleatório a partir de uma distribuição de Poisson com uma média (ou seja, lambda) 8. A função `set.seed()` garante que todas as máquinas irão gerar o mesmo número pseudo-aleatórios [(mais sobre números pseudo-aleatórios)](https://en.wikibooks.org/wiki/R_Programming/Random_Number_Generation). Então se definirmos `set.seed(10)`, vemos que x toma o valor 8. Você deve obter o mesmo número.
 
 ***
 
-**Importante:** quando R avalia a condição dentro de `if()`, ele está procurando um elemento lógico, isto é, `TRUE` ou `FALSE`. Isso pode causar algumas dores de cabeça para iniciantes. Por exemplo:
+**Importante:** quando R avalia a condição dentro do `if()`, ele está procurando um elemento lógico, isto é, `TRUE` ou `FALSE`. Isso pode causar algumas dores de cabeça para iniciantes. Por exemplo:
 
-```{r}
+```{r,}
 x  <-  4 == 3
 if (x) {
   "4 igual a 3"
 }
 ```
 
-Como podemos ver, a mensagem não foi impressa porque o vetor x é `FALSO`
+Como podemos ver, a mensagem não foi mostrada porque o vetor x é `FALSO`
 
 ```{r}
 x <- 4 == 3
@@ -100,30 +101,77 @@ x
 ```
 
 ***
-### Desafio 1
 
-Alguém obteve uma mensagem de aviso como este?
+<input type=button id=toggle_d71 value="Desafio 1"></input>
+
+Use o comando `if()` para mostrar uma mensagem reportando se há algum registro de 2002 do conjunto de dados `gapminder`. Faça o mesmo para 2012.
+
+
+<input type=button id=toggle_d72 value="Resposta do desafio 1"></input>
+
+veremos uma solução para o Desafio 1 que não inclue a função `any()`. Primeiro obtemos um vetor lógico que descreve qual elemento do `gapminder$year` é igual a 2002:
+
+```{r,eval=FALSE}
+
+gapminder[(gapminder$year == 2002),]
+```
+
+Em seguida, contaremos o número de linhas do data.frame `gapminder`que corresponde a 2002:
+
+```{r,eval=FALSE}
+rows2002_number <- nrow(gapminder[(gapminder$year == 2002),])
+
+```
+
+A presença de algum registro de 2002 é equivalente a `rows2002_number` ser um ou mais:
+```{r, eval=FALSE}
+rows2002_number >= 1
+```
+
+Colocando tudo junto, obtemos:
+```{r, eval=FALSE}
+if(nrow(gapminder[(gapminder$year == 2002),]) >= 1){
+  print("Registro(s) do ano 2002 encontrado(s).")
+}
+```
+Tudo isto pode se feito rapidamento utilizando a função `any()`. A condição logica para isto pode ser expressa por:
+
+
+```{r, eval=FALSE}
+if(any(gapminder[(gapminder$year == 2002),]) >= 1){
+  print("Registro(s) do ano 2002 encontrado(s).")
+}
+```
+
+```{r, eval=FALSE}
+if(any(gapminder[(gapminder$year == 2002),]) >= 1){
+  print("Registro(s) do ano 2002 encontrado(s).")
+}
+```
+***
+
+### Alguém obteve uma mensagem de aviso como esta?
 
 ```
 Warning in if (gapminder$year == 2012) {: the condition has length > 1 and
 only the first element will be used
 ```
-Se a sua condição for avaliada por um vetor com mais de um elemento lógico, a função `if()` ainda será executado, mas só irá avaliar a condição no primeiro elemento. Aqui você precisa ter certeza de sua condição é de comprimento 1.
+Se a sua condição avalia um vetor com mais de um elemento lógico, a função `if()` ainda será executada, mas irá avaliar apenas  a condição no primeiro elemento. Você precisa ter certeza que sua condição é de comprimento 1.
 
 ***
 
 ### Dica: `any()` e `all()`
 
 
-A função `any()` irá retornar `TRUE` se pelo menos um valor `TRUE` for encontrado dentro do vetor, caso contrário ele irá retornar `FALSE`. Isto pode ser utilizado de uma maneira semelhante ao operador `%in%`. A função `all()`, como o nome sugere, só retornará `TRUE` se todos os valores do vetor são verdadeiros.
+A função `any()` irá retornar `TRUE` se pelo menos um valor `TRUE` for encontrado dentro do vetor, caso contrário a função irá retornar `FALSE`. Isto pode ser utilizado de uma maneira semelhante ao operador `%in%`. A função `all()`, como o nome sugere, irá retornar apenas `TRUE` se todos os valores do vetor são verdadeiros.
 
 ***
 
 ## Operações repetidas
 
-Se você quiser interagir sobre um conjunto de valores, quando a ordem de iteração é importante, e realizar a mesma operação em cada um, um loop `for()` irá fazer o trabalho. Vimos loops `for()` nas lições de *Shell* anteriores. Este é o mais flexível das operações de looping, mas, também o mais difícil de usar corretamente. Evite o uso de loops `for()` ao menos que a ordem de iteração seja importante: isto é, o cálculo em cada iteração depende dos resultados das iterações anteriores.
+Se você quiser interagir sobre um conjunto de valores, quando a ordem da iteração é importante, e realizar a mesma operação em cada um deles, o laço `for()` irá fazer este trabalho. Vimos laços do `for()` nas lições anteriores do *Shell*. Dentro os laços de operações, este é o mais flexível, mas também é o mais difícil de usar corretamente. Evite o uso de laços `for()` a menos que a ordem de iteração seja importante: isto é, o cálculo em cada iteração depende dos resultados das iterações anteriores.
 
-A estrutura básica de um loop `for()` é:
+A estrutura básica de um laço `for()` é:
 
 
 ```{r,eval=FALSE}
@@ -140,9 +188,9 @@ for(i in 1:10){
 }
 ```
 
-`1:10` cria um vetor; você pode interagir sobre qualquer outro vetor também.
+A sequência `1:10` cria um vetor; você pode interagir sobre qualquer outro vetor também.
 
-Podemos usar um loop `for()` aninhado em outro loop `for()` para iterar sobre duas coisas ao mesmo tempo.
+Podemos usar o laço `for()` aninhado em outro laço `for()` para iterar sobre duas coisas ao mesmo tempo.
 
 
 ```{r}
@@ -155,7 +203,7 @@ for(i in 1:5){
 ```
 
 
-Em vez de imprimir os resultados, podemos escrever a saída do **loop* para um novo objeto.
+Em vez de imprimir os resultados, podemos escrever a saída do **laço* em um novo objeto.
 
 ```{r}
 output_vector <- c()
@@ -169,17 +217,17 @@ output_vector
 
 ```
 
-Esta abordagem pode ser útil, mas "crescer seus resultados" (criando incrementalmente o objeto do resultado) é computacionalmente ineficiente, então o evite quando você está interagindo através de uma série de valores.
+Esta abordagem pode ser útil, mas "aumentar seus resultados" (criando incrementalmente o objeto do resultado) é computacionalmente ineficiente, então o evite quando você estiver interagindo através de uma série de valores.
 
 ***
 
-### Dica: Não"cresça  seus resultados"
+### Dica: Não "aumente seus resultados"
 
-Uma das maiores coisas que atrapalha os novatos em R e usuários experientes da mesma forma, é construir um objeto de resultados (vetor, lista, matriz de estrutura de dados) enquanto o seu loop *for* progride. Computadores são muito ruins em lidar com isso, então seus cálculos podem ser muito lerdos. É muito melhor definir um objeto de resultados vazio antes com as dimensões apropriadas. Então, se você sabe que o resultado final será armazenado em uma matriz como a de cima, crie uma matriz vazia com 5 linhas e 5 colunas, em seguida, em cada iteração armazene os resultados no local apropriado.
+Uma das maiores coisas que atrapalha os novatos em R e até mesmo usuários mais experientes, é construir um objeto de resultados (vetor, lista, matriz, conjunto de dados) enquanto o seu laço *for* progride. Computadores são muito ruins em lidar com isso, então seus cálculos podem ser muito lerdos. É muito melhor definir um objeto de resultados vazio antes com as dimensões apropriadas. Sendo assim, o resultado final será guardado em uma matriz como mostrado abaixo, crie uma matriz vazia com 5 linhas e 5 colunas, em seguida, em cada iteração armazene os resultados no local apropriado.
 
 ***
 
-Uma melhor maneira é definir o seu objeto (Vazio) de saída antes de preencher os valores. Este exemplo parece mais complexo, mas ainda é mais eficiente.
+Uma melhor maneira é definir o seu objeto (Vazio) de saída antes de preencher os valores. Este exemplo parece ser mais complexo, mas ainda é mais eficiente.
 
 ```{r}
 output_matrix <- matrix(nrow=5, ncol=5)
@@ -198,18 +246,18 @@ output_vector2
 
 ***
 
-### Dica: While loops
+### Dica: Laço ``while`` 
 
-As vezes você precisará repetir uma operação até uma certa condição ocorrer. Você pode fazer isso com `while()` loop.
+As vezes você precisará repetir uma operação até uma certa condição ocorrer. Isto pode ser feito através do laço `while()`, do português *enquanto*.
 
 ```{r,eval=FALSE}
- while(essa condição verdadeira){
+ while(essa condção é verdadeira){
   faça algo
 }
 
 ```
 
-Como exemplo, tempo um *while loop* que gera números aleatórios a partir de uma distribuição uniforme (runif() function) entre 0 e 1 até que apareça um que seja menor que 0,1.
+Como por exemplo, aqui está um laço `while()` que gerar valores da distribuição uniforme (a função `runif()`) entre 0 e 1 até conseguir um valor que seja menor que 0.1.
 
 ```{r}
 z <- 1
@@ -219,20 +267,20 @@ while(z > 0.1){
 }
 ```
 
-`while()` loops  nem sempre serão apropriadas. Você deve ser cauteloso para não acabar em um loop infinito, porque sua condição não foi alcançada.
+O laço `while()` nem sempre será apropriada. Você deve ser bastante cauteloso para não acabar em um laço infinito devido a sua condição não ser alcançada.
 
 ***
 
 <input type=button id=toggle_d71 value="Desafio 2"></input>
 
 
-Compare os objetos `output_vector` e `output_vector2`. Eles são iguais? Se não, por que não? Como você poderia mudar o último bloco do código para fazer `output_vector2` ser igual a `output_vector`?
+Compare os objetos `output_vector` e `output_vector2`. Eles são iguais? Se não, por que não? Como você poderia mudar o último bloco do códigos para fazer `output_vector2` ser igual a `output_vector`?
 
 
 <input type=button id=toggle_d72 value="Resposta do desafio 2"></input>
 
 
-Podemos checar se os dois vetoes são idênticos usando a função all():
+Podemos checar se os dois vetores são idênticos usando a função `all()`:
 
 
 ```{r}
@@ -240,7 +288,7 @@ all(output_vector == output_vector2)
 
 ```
 
-Contudo, todos os elementos de `output_vector` podem ser encontrados no `output_vector2`:
+No entanto, todos os elementos de `output_vector` podem ser encontrados no `output_vector2`:
 
 
 ```{r}
@@ -255,7 +303,7 @@ all(output_vector2 %in% output_vector)
 
 ```
 
-Portanto, os elementos em `output_vector` e `output_vector2` estão apenas ordenados de forma diferente. Isso porque a saída de `as.vector()` são os elementos  de uma matriz de entrada pela sua coluna. Olhando `output_matrix`, podemos notar que queremos seus elementos por linha. A solução é transpor a `output_matrix`. Podemos fazer isso usando a função transposta `t()` ou colocando os elementos na ordem certa. A primeira solução requer mudar a original.
+Portanto, os elementos em `output_vector` e `output_vector2` estão ordenados de uma maneira diferente. Isso porque a saída de `as.vector()` são os elementos de uma matriz de entrada pela sua coluna. Olhando `output_matrix`, podemos notar que queremos seus elementos por linha. A solução é transpor a `output_matrix`. Podemos fazer isto usando a função transposta `t()` ou colocando os elementos na ordem certa. A primeira solução requer mudar a original.
 
 
 ```{r}
@@ -286,9 +334,11 @@ output_matrix[j, i] <- temp_output
 
 <script>
 $("#toggle_d71").parent().next().hide();
+$("#toggle_d71").parent().next().next().hide();
 
 $("#toggle_d71").on( "click", function(){
   $("#toggle_d71").parent().next().toggle();
+  $("#toggle_d71").parent().next().next().toggle();
   } );
 $("#toggle_d72").parent().next().hide();
 $("#toggle_d72").parent().next().next().hide();
@@ -331,7 +381,7 @@ $("#toggle_d72").on( "click", function(){
 
 <input type=button id=toggle_d73 value="Desafio 3"></input>
 
-Escreva um script que que faça um loop nos dados `gapminder` por continente e imprima se a média da expectativa de vida é menor ou maior do que 50 anos.
+Escreva um script que que faça um laço nos dados `gapminder` por continente e mostre se a média da expectativa de vida é menor ou maior do que 50 anos.
 
 <input type=button id=toggle_d74 value="Resposta do desafio 3"></input>
 
@@ -342,11 +392,11 @@ gapminder <- read.csv("data/gapminder-FiveYearData.csv")
 unique(gapminder$continent)
 ```
 
-**Passo 2:** Devemos também fazer um loop em cada um dos continentes e calcular a média da expectativa de vida para cada subconjunto dos dados. Podemos fazer isso da seguinte maneira:
+**Passo 2:** Devemos também fazer um laço em cada um dos continentes e calcular a média da expectativa de vida para cada `subconjunto` dos dados. Podemos fazer isso da seguinte maneira:
 
-1. Faça um loop em cada um dos valores únicos de `continent`.
-2. Para cada valor de `continent`, crie uma variável temporária que armazene a expectativa de vida para o subconjunto,
-3. Retorne a a expectativa de vida calculada imprimindo o resultado:
+1. Faça um laço em cada um dos valores únicos de `continent`.
+2. Para cada valor de `continent`, crie uma variável temporária que armazene a expectativa de vida para aquele subconjunto,
+3. Retorne a expectativa de vida calculada mostrando o resultado:
 
 ```{r,eval=FALSE}
 for( iContinent in unique(gapminder$continent) ){
@@ -356,9 +406,9 @@ for( iContinent in unique(gapminder$continent) ){
 }
 ```
 
-**Passo 3:** O Exercício só quer que imprima se a média da expectativa de vida é maior ou menor do que 50. Então precisamos adicionar uma condição `if` antes de imprimir, que avalia se a média da expectativa de vida calculadaé menor ou maior do que um limiar, e imprima uma saída condicionada ao resultado. Precisamos alterar (3):
+**Passo 3:** O Exercício apenas quer que mostre se a média da expectativa de vida é maior ou menor do que 50. Então precisamos adicionar uma condição `if` antes de mostrar o resultado, a função avalia se a média da expectativa de vida calculada é menor ou maior do que um limiar, e mostre uma saída condicionada ao resultado. Precisamos corrigir (3) de cima:
 
-3a. Se a expectativa de vida calculada for menor que um valor limiar (50 anos), retorne o continente e a afirmação que a expectativa de vida é menor que o valor limiar, caso contrário retorne o continente e afirmação que a expectativa de vida é maior que o valor limiar:
+3a. Se a expectativa de vida calculada for menor que um valor limiar (50 anos), retorne o continente e a afirmação que a expectativa de vida é menor que o valor limiar, caso contrário retorne o continente e uma afirmação que a expectativa de vida é maior que o valor limiar:
 
 ```{r,eval=FALSE}
 valorlimiar <- 50
@@ -373,15 +423,18 @@ for( iContinent in unique(gapminder$continent) ){
        cat("A média da expectativa de vida em", iContinent, "é maior que", valorlimiar, "\n")
         } # fim da condição if else 
    rm(temporario)
-   } # fim do loop
+   } # fim do laço
 > >
 ```
 
 <script>
 $("#toggle_d73").parent().next().hide();
+$("#toggle_d73").parent().next().next().hide();
 
 $("#toggle_d73").on( "click", function(){
   $("#toggle_d73").parent().next().toggle();
+    $("#toggle_d73").parent().next().next().toggle();
+  
   } );
 $("#toggle_d74").parent().next().hide();
 $("#toggle_d74").parent().next().next().hide();
@@ -424,11 +477,11 @@ $("#toggle_d74").on( "click", function(){
 
 <input type=button id=toggle_d75 value="Desafio 4"></input>
 
-Modifique o script do Desafio 3 para fazer loop em cada país. Mas deverá imprimir se a expectativa de vida é menor do que 50 anos, entre 50 e 70 anos, ou maior do que 70 anos.
+Modifique o script do Desafio 3 para fazer um laço em cada país. Dessa vez deverá mostrar se a expectativa de vida é menor que 50, entre 50 e 70 ou maior que 70.
 
 <input type=button id=toggle_d76 value="Resposta do desafio 4"></input>
 
-Nós modificamos a solução do Desafio 3 adicionando 2 valores limiares (limiar inferior e limiar superior) e estendendo as instruções `if-else`:
+Nós modificamos nossa solução do Desafio 3 adicionando 2 valores limiares (limiar inferior e limiar superior) e estendendo as instruções `if-else`:
 
 
 ```{r,eval=FALSE}
@@ -454,9 +507,11 @@ for( iCountry in unique(gapminder$country) ){
 
 <script>
 $("#toggle_d75").parent().next().hide();
+$("#toggle_d75").parent().next().next().hide();
 
 $("#toggle_d75").on( "click", function(){
   $("#toggle_d75").parent().next().toggle();
+  $("#toggle_d75").parent().next().next().toggle();
   } );
 $("#toggle_d76").parent().next().hide();
 $("#toggle_d76").parent().next().next().hide();
@@ -471,24 +526,24 @@ $("#toggle_d76").on( "click", function(){
 
 <input type=button id=toggle_d77 value="Desafio 5 - Avançado"></input>
 
-Escreva um script que faça loop em cada país da base de dados `gapminder`, teste se o país começa com "B", e faça um gráfico de linha (Expectativa de vida X Tempo) se a média da expectativa de vida é menor que 50 anos.
+Escreva um script que faça um laço em cada país da base de dados `gapminder`, teste se o país começa com "B", e faça um gráfico de linha de Expectativa de vida X Tempo se a média da expectativa de vida é menor que 50 anos.
 
 <input type=button id=toggle_d78 value="Resposta do desafio 5"></input>
 
-Vamos usar o comando `grep`, que foi introduzido na lição *Unix Shell* para encontrar quais países começam com "B". Vamos entender como fazer isso primeiro. Seguindo a seção da lição *Unix Shell* somos tentados a tentar o seguinte:
+Vamos usar o comando `grep`, que foi introduzido na lição *Unix Shell* para encontrar quais países começam com "B". Vamos entender como fazer isto primeiro. Seguindo a seção da lição *Unix Shell* somos tentados a tentar o seguinte:
 
 
 ```{r,eval=FALSE}
 grep("^B", unique(gapminder$country))
 ```
 
-Mas quando avaliamos  este comando ele retorna os indices da variável fator país que começa com "B". Para conseguir os valores, devemos adicionar a opção `value=TRUE` para o comando `grep`:
+Mas quando avaliamos este comando ele retorna os indices da variável fator `país` que começa com "B". Para conseguir os valores, devemos adicionar a opção `value=TRUE` no comando `grep`:
 
 ```{r,eval=FALSE}
 grep("^B", unique(gapminder$country), value=TRUE)
 ```
 
-Vamos agora armazenar esses países em uma variável `paisesCandidatos`, e então fazer um loop em cada entrada da variável. Dentro do loop, avaliamos a média da expectativa de vida para cada país, e se a média é menor do que 50 anos usamos *base-plot* para plotar a evolução da média da expectativa de vida:
+Vamos agora armazenar esses países em uma variável `paisesCandidatos`, e então fazer um laço em cada entrada da variável. Dentro do laço, avaliamos a média da expectativa de vida para cada país, e se a média é menor do que 50 anos. Usamos *base-plot* para plotar a evolução da média da expectativa de vida:
 
 
 ```{r,eval=FALSE}
@@ -498,7 +553,7 @@ for( iCountry in paisesCandidatos){
     temporario<- mean(subset(gapminder, country==iCountry)$lifeExp)
     
     if(temporario < vamorlimiar){
-        cat("A média da expectativa de vida em", iCountry, "é menor que", valorlimiar, "plotando o gráfico de expectativa de vida... \n")
+        cat("A média da expectativa de vida em", iCountry, "é menor que", valorlimiar, "plotando o gráfico da expectativa de vida... \n")
         
         with(subset(gapminder, country==iCountry),
                 plot(year,lifeExp,
@@ -508,7 +563,7 @@ for( iCountry in paisesCandidatos){
                      xlab = "Ano"
                    ) # final do "plot"
               ) # final do "with"
-    } # final do "loop"
+    } # final do "laço"
     rm(temporario)
  }```
 > {: .solution}
@@ -517,9 +572,11 @@ for( iCountry in paisesCandidatos){
 
 <script>
 $("#toggle_d77").parent().next().hide();
+$("#toggle_d77").parent().next().next().hide();
 
 $("#toggle_d77").on( "click", function(){
   $("#toggle_d77").parent().next().toggle();
+    $("#toggle_d77").parent().next().next().toggle();
   } );
 $("#toggle_d78").parent().next().hide();
 $("#toggle_d78").parent().next().next().hide();
